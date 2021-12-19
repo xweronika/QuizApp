@@ -9,12 +9,10 @@ import { Router } from '@angular/router';
 export class ToolbarComponent implements OnInit {
   public active = false;
   constructor(private router: Router) {
-    this.checkRouter();
+    router.events.subscribe(() => {
+      this.active = this.router.url === '/' ? false : true;
+    });
   }
-  checkRouter() {
-    this.active = this.router.url === '/' ? false : true;
-  }
-  ngOnInit(): void {
-  }
-
+  checkRouter() { }
+  ngOnInit() { }
 }

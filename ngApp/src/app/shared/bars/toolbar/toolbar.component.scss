@@ -1,3 +1,43 @@
-.example-spacer {
-  flex: 1 1 auto;
+.toolbar{
+  background-color:transparent
+}
+
+.close-container{
+  cursor: pointer;
+}
+
+.leftright{
+  height: 5px;
+  width: 45px;
+  position: absolute;
+  right: 25px;
+  top: 35px; 
+  background-color: var(--pink);
+  border-radius: 2px;
+  transform: rotate(45deg);
+  transition: all .3s ease-in;
+}
+
+.rightleft{
+  height: 5px;
+  width: 45px;
+  position: absolute;
+  right: 25px;
+  top: 35px; 
+  background-color: var(--pink);
+  border-radius: 2px;
+  transform: rotate(-45deg);
+  transition: all .3s ease-in;
+}
+
+.close-container:hover .leftright{
+  transform: rotate(-45deg);
+  background-color: var(--blue);
+}
+.close-container:hover .rightleft{
+  transform: rotate(45deg);
+  background-color: var(--blue);
+}
+.close-container:hover label{
+  opacity: 1;
 }

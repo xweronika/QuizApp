@@ -1,0 +1,29 @@
+// THEMES
+@import "./my-theme.scss";
+//@import "@angular/material/prebuilt-themes/purple-green.css";
+
+// FONTS
+@font-face {
+	font-family: "Bungee";
+	src: url(../fonts/Bungee-Regular.ttf) format("opentype");
+}
+
+:root {
+	// COLORS
+	--orange: #eb7132;
+	--pink: #f27b9b;
+  --blue: #53d9d1;
+  --dark: #303030;
+  --black: #000000;
+}
+
+html,
+body {
+	height: 100%;
+	background-color: #303030;
+}
+
+body {
+	margin: 0;
+	font-family: Roboto, "Helvetica Neue", sans-serif;
+}
