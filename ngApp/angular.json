@@ -5,6 +5,12 @@
   "projects": {
     "ngApp": {
       "projectType": "application",
+      "i18n": {
+        "sourceLocale": "en-US",
+        "locales": {
+          "pl": "src/assets/locale/messages.pl.xlf"
+        }
+      },
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss"
@@ -36,6 +42,9 @@
             "scripts": []
           },
           "configurations": {
+            "pl": {
+              "localize": ["pl"]
+            },
             "production": {
               "budgets": [
                 {
@@ -71,6 +80,9 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
+            "pl": {
+              "browserTarget": "ngApp:build:pl"
+            },
             "production": {
               "browserTarget": "ngApp:build:production"
             },

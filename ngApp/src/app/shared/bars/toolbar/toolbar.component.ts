@@ -15,4 +15,8 @@ export class ToolbarComponent implements OnInit {
   }
   checkRouter() { }
   ngOnInit() { }
+  localeList = [
+    { code: 'en-US', label: 'English' },
+    { code: 'pl', label: 'Polski' },
+  ]
 }
