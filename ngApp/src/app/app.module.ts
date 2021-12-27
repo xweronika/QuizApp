@@ -6,9 +6,6 @@ import { AppComponent } from './app.component';
 import { MaterialModule } from './core/plugins/material/material.module';
 import { ToolbarComponent } from './shared/bars/toolbar/toolbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { registerLocaleData } from '@angular/common';
-import localePl from '@angular/common/locales/pl'
-registerLocaleData(localePl, 'pl');
 
 @NgModule({
   declarations: [
