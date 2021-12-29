@@ -1,20 +1,23 @@
 // THEMES
-@import "./my-theme.scss";
-//@import "@angular/material/prebuilt-themes/purple-green.css";
+//@import "./my-theme.scss";
+@import "@angular/material/prebuilt-themes/purple-green.css";
+@import "./my-styles.scss";
 
 // FONTS
 @font-face {
 	font-family: "Bungee";
 	src: url(../fonts/Bungee-Regular.ttf) format("opentype");
 }
-
+@font-face {
+	font-family: "Righteous";
+	src: url(../fonts/Righteous-Regular.ttf) format("opentype");
+}
 :root {
-	// COLORS
-	--orange: #eb7132;
-	--pink: #f27b9b;
-  --blue: #53d9d1;
-  --dark: #303030;
-  --black: #000000;
+// COLORS
+--orange: #eb7132;
+--pink: #f27b9b;
+--blue: #53d9d1;
+--dark: #303030;
 }
 
 html,

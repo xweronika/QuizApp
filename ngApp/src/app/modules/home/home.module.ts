@@ -3,7 +3,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeRoutingModule } from './home-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { TranslateModule } from '@ngx-translate/core';
+import { SharedModule } from '../../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -12,10 +13,10 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     CommonModule,
     HomeRoutingModule,
-    CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    TranslateModule,
+    SharedModule
   ]
 })
 export class HomeModule { }

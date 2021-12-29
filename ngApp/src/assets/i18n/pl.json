@@ -1,0 +1,11 @@
+{
+    "HOME": {
+        "QUIZZES": "Quizy",
+        "ADD_NEW": "Dodaj",
+        "INFO": "Info"
+    },
+    "QUIZZES": {
+        "OPEN": "Otwórz",
+        "SHARE": "Udostępnij"
+    }
+}

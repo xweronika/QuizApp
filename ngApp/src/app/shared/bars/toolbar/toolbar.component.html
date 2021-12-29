@@ -1,22 +1,7 @@
-<mat-toolbar *ngIf="active" class="toolbar">
-    <div class="dot-menu">
-        <input id="dot-menu" type="checkbox" class="dot-menu__checkbox">
-        <label for="dot-menu" class="dot-menu__label"><span>Menu</span></label>
-    </div>
-
-
-    <div class="close-container">
+<mat-toolbar [ngClass]="{'hide': !active}" class="toolbar">
+    <div class="close-container" routerLink="/">
         <div class="leftright"></div>
         <div class="rightleft"></div>
     </div>
-
-
-    <li *ngFor="let locale of localeList">
-
-
-        <a href="/{{locale.code}}/">
-            {{locale.label}}
-        </a>
-    </li>
-
+    <app-language-switcher></app-language-switcher>
 </mat-toolbar>

@@ -1,0 +1,11 @@
+<div class="dot-menu" (click)="langselect.open()">
+    <input id="dot-menu" type="checkbox" class="dot-menu__checkbox">
+    <label for="dot-menu" class="dot-menu__label"><span></span></label>
+</div>
+<mat-select #langselect (selectionChange)="translate.use(langselect.value)" class="select"
+    [value]="translate.currentLang">
+    <mat-select-trigger></mat-select-trigger>
+    <mat-option *ngFor="let lang of translate.getLangs()" [value]="lang">
+        {{names[lang]}}
+    </mat-option>
+</mat-select>
