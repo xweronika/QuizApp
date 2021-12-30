@@ -13,6 +13,7 @@ import { DetailsComponent } from './components/details/details.component';
     AddNewComponent,
     DetailsComponent
   ],
+  providers: [],
   imports: [
     CommonModule,
     QuizzesRoutingModule,

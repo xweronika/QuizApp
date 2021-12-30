@@ -12,13 +12,8 @@
 
 //CARDS
 .body {
-  margin: 0;
-  padding: 0;
   display: flex;
-  justify-content: center;
-  align-items: center;
   font-family: "Righteous";
-  min-height: 100vh;
   background-color: var(--dark); 
 
   .container {
@@ -27,7 +22,7 @@
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-gap: 35px;
     margin: 0 auto;
-    padding: 40px 0;
+    padding: 7% 0 0;
 
     .card {
       position: relative;

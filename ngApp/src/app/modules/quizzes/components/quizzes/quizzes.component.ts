@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Quiz } from '../../../../core/services/quiz.service'
+import { QuizService } from '../../../../core/services/quiz.service';
 @Component({
   selector: 'app-quizzes',
   templateUrl: './quizzes.component.html',
@@ -7,36 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class QuizzesComponent implements OnInit {
-  public quizzes: Array<Quiz> = [
-    {
-      id: 1,
-      title: "Quiz What I like",
-      description: "Lorem ipsum tekst składający się z łacińskich i quasi."
-    },
-    {
-      id: 2,
-      title: "Quiz What I like",
-      description: "Lorem ipsum tekst składający się z łacińskich."
-    },
-    {
-      id: 2,
-      title: "Quiz What I like",
-      description: "Lorem ipsum tekst składający się z łacińskich."
-    },
-    {
-      id: 2,
-      title: "Quiz What I like",
-      description: "Lorem ipsum tekst składający się z łacińskich."
-    }
-  ]
-  constructor() { }
+  public quizzes: Array<Quiz> = [];
+  handleUpdateResponse: any;
+  handleError: any;
+  constructor(public quizService: QuizService,) { }
 
   ngOnInit(): void {
+    this.quizService.getQuizzes()
+      .subscribe({
+        next: res => { this.quizzes = res },
+        error: err => { console.log(err.error) }
+      });
   }
-
-}
-export interface Quiz {
-  id: number;
-  title: string;
-  description: string;
 }
