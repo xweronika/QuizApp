@@ -37,7 +37,7 @@ class Quiz {
     inner join answers on questions.id = answers.question_id
     WHERE quizzes.id = ${id};`;
 
-    return db.execute(sql);
+    return db.execute(sql)
   }
 }
 
