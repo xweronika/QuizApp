@@ -22,11 +22,10 @@ exports.addNewQuiz = async (req, res, next) => {
 
 exports.getQuizById = async (req, res, next) => {
   try {
-    let quizId = req.params.id;
-
-    let [quiz, _] = await Quiz.findById(quizId);
-
-    res.status(200).json({ quiz: quiz[0] });
+    const quizId = req.params.id;
+    const [quiz] = await Quiz.findById(quizId);
+    const [details, _] = await Quiz.findDetails(quizId);
+    res.status(200).json({ quiz: quiz[0], details: details });
   } catch (error) {
     next(error);
   }

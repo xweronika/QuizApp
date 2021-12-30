@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { QuizService, QuizDetails } from '../../../../core/services/quiz.service';
 
 @Component({
   selector: 'app-details',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./details.component.scss']
 })
 export class DetailsComponent implements OnInit {
-
-  constructor() { }
+  public quiz: Array<QuizDetails> = [];
+  constructor(public quizService: QuizService,) { }
 
   ngOnInit(): void {
+    this.quizService.getById(1)
+    .subscribe({
+      next: res => { this.quiz = res; console.log(res)},
+      error: err => { console.log(err.error) }
+    });
   }
 
 }
