@@ -1,27 +1,15 @@
 $text-color: #142a38;
 
 .body {
-    margin: 0;
     height: 100vh;
     display: grid;
+    font-size: 2.5em;
   }
   @media screen and (min-width: 1000px) {
     .body {
       grid-template-columns: repeat(3, 1fr);
       grid-template-rows: 1fr;
     }
-  }
-  
-  .background-one {
-    background-color: var(--dark);
-  }
-  
-  .background-two {
-    background-color: var(--dark);
-  }
-  
-  .background-three {
-    background-color: var(--dark);
   }
   
   .link-container {
@@ -33,12 +21,18 @@ $text-color: #142a38;
     position: relative;
     z-index: 0;
   }
-  
-  a {
-    font-family: "Bungee", cursive;
-    font-size: 2.5em;
+
+  .link-one-params{
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    transition: clip-path 1s cubic-bezier(0.65, 0, 0.35, 1);
   }
-  
+
   .link-one {
     color: var(--blue);
     transition: color 1s cubic-bezier(0.32, 0, 0.67, 0);
@@ -48,21 +42,12 @@ $text-color: #142a38;
   .link-one:hover {
     color: $text-color;
     transition: color 1s cubic-bezier(0.33, 1, 0.68, 1);
-  
   }
   
   .link-one::before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    right: 0;
+    @extend .link-one-params;
     background-color: var(--blue);
-  
     clip-path: circle(0% at 50% calc(50%));
-    transition: clip-path 1s cubic-bezier(0.65, 0, 0.35, 1);
   }
   
   .link-one:hover::before {
@@ -70,15 +55,8 @@ $text-color: #142a38;
   }
   
   .link-one::after {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    right: 0;
+    @extend .link-one-params;
     background-color: var(--dark);
-  
     clip-path: polygon(
       40% 0%,
       60% 0%,
@@ -89,8 +67,6 @@ $text-color: #142a38;
       60% 100%,
       40% 100%
     );
-  
-    transition: clip-path 1s cubic-bezier(0.65, 0, 0.35, 1);
   }
   
   .link-one:hover::after {
@@ -135,7 +111,6 @@ $text-color: #142a38;
       0% 110%
     );
     background-color: var(--pink);
-  
     transition: clip-path 1s cubic-bezier(0.25, 1, 0.5, 1);
   }
   
@@ -162,30 +137,31 @@ $text-color: #142a38;
     right: 50%;
     transform: translate(50%, -50%) rotate(0deg) scale(0);
     transition: transform 1s ease;
-  
     background-color: var(--pink);
   }
   
   .link-two:hover::after {
     transform: translate(50%, -50%) rotate(135deg) scale(1);
   }
-
-  .link-three {
-    color: var(--orange);
-  }
-  
-  .link-three::after {
+  .link-three-params {
     content: "";
     position: absolute;
     z-index: 2;
     width: 50%;
     height: 100%;
+    background-color: var(--orange);
+  }
+  .link-three {
+    color: var(--orange);
+  }
+  
+  .link-three::after {
+    @extend .link-three-params;
     top: 0%;
     left: 0%;
     transform: translate(0, -50%) scaleY(0);
     transition: transform 1s ease;
     mix-blend-mode: difference;
-  
     clip-path: polygon(
       20% 60%,
       100% 60%,
@@ -196,8 +172,6 @@ $text-color: #142a38;
       60% 20%,
       20% 20%
     );
-  
-    background-color: #ff9b6a;
   }
   
   .link-three:hover::after {
@@ -205,17 +179,12 @@ $text-color: #142a38;
   }
   
   .link-three::before {
-    content: "";
-    position: absolute;
-    z-index: 2;
-    width: 50%;
-    height: 100%;
+    @extend .link-three-params;
     bottom: 0%;
     right: 0%;
     transform: translate(0, 50%) scaleY(0);
     transition: transform 1s ease;
     mix-blend-mode: difference;
-  
     clip-path: polygon(
       80% 40%,
       0% 40%,
@@ -226,8 +195,6 @@ $text-color: #142a38;
       40% 80%,
       80% 80%
     );
-  
-    background-color: #ff9b6a;
   }
   
   .link-three:hover::before {

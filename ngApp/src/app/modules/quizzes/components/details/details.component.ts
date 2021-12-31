@@ -7,8 +7,8 @@ import { QuizService, QuizDetails } from '../../../../core/services/quiz.service
   styleUrls: ['./details.component.scss']
 })
 export class DetailsComponent implements OnInit {
-  public quiz: Array<QuizDetails> = [];
-  constructor(public quizService: QuizService,) { }
+  public quiz!: QuizDetails;
+  constructor(public quizService: QuizService) { }
 
   ngOnInit(): void {
     this.quizService.getById(1)
@@ -17,5 +17,6 @@ export class DetailsComponent implements OnInit {
       error: err => { console.log(err.error) }
     });
   }
+
 
 }

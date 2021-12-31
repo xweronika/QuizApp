@@ -35,6 +35,6 @@ export class QuizService {
     return this.http.get<Quiz[]>(this.url);
   }
   getById(id: number) {
-    return this.http.get<QuizDetails[]>(`${this.url}/${id}`);
+    return this.http.get<QuizDetails>(`${this.url}/${id}`);
   }
 }
