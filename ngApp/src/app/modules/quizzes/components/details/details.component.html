@@ -4,7 +4,7 @@
     <p class="subtitle">{{quiz.quiz.description | translate }}</p>
     <mat-divider class="divider margin"></mat-divider>
 
-    <div class="container" *ngFor="let data of quiz.details">
+    <div class="center" *ngFor="let data of quiz.details">
         <div class="box">
             <h2 class="question gradient font-2">{{data.question}}</h2>
             <mat-radio-group>
@@ -16,7 +16,7 @@
         </div>
     </div>
 
-    <div class="container">
+    <div class="center">
         <button class="glow-on-hover" type="button" routerLink="score">{{'QUIZZES.SUBMIT' | translate }}</button>
     </div>
 </div>

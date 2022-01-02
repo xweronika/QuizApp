@@ -106,6 +106,26 @@
     50% { background-position: 400% 0; }
     100% { background-position: 0 0; }
 }
+
+// RADIO BUTTON
+::ng-deep .mat-radio-button.mat-accent .mat-radio-inner-circle {
+	background-color: var(--pink);
+}
+::ng-deep.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+	border-color: var(--pink);
+}
+.mat-radio-button.mat-accent.mat-radio-checked{
+  color:var(--pink); 
+}
+
+
+// CENTER 
+.center {  
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+}
+
 @media screen and (min-width: 1000px) {
   .subtitle{
     margin: 0 27% !important;

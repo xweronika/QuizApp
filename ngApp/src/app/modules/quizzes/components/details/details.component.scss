@@ -1,13 +1,4 @@
-
-.container {  
-  height: 100%; 
-  font-size: 10px; 
-  display: flex; 
-  align-items: center; 
-  justify-content: center;
-}
-
-.box{
+.box {
   padding: 0 7% 38px 8%;
   margin: 15px;
 }
@@ -42,13 +33,3 @@
   margin: 50px 15px;
   }
 
-// RADIO BUTTON
-::ng-deep .mat-radio-button.mat-accent .mat-radio-inner-circle {
-	background-color: var(--pink);
-}
-::ng-deep.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
-	border-color: var(--pink);
-}
-.mat-radio-button.mat-accent.mat-radio-checked{
-  color:var(--pink); 
-}
