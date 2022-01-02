@@ -6,12 +6,12 @@
                     <span class="stars"></span>
                     <p class="text font-2">{{quiz.description}}</p>
                     <button class="glow-on-hover" type="button" [routerLink]="quiz.id.toString()">
-                        {{'QUIZZES.OPEN' | translate }}</button><br>
+                        {{'OPEN' | translate }}</button><br>
                     <button class="glow-on-hover" type="button">{{'QUIZZES.SHARE' | translate }}</button>
                 </div>
             </div>
             <div class="face face2">
-                <h2 class="font-2">{{quiz.title}}</h2>
+                <h2 class="font-2">{{quiz.title | translate}}</h2>
             </div>
         </div>
     </div>

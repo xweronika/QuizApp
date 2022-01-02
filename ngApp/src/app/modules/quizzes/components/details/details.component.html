@@ -1,1 +1,13 @@
-<h1 class="linear-wipe font-1">{{quiz.quiz.title}}</h1>
+<h1 *ngIf="quiz" class="title">{{quiz.quiz.title | translate }}</h1>
+
+<mat-divider class="divider"></mat-divider>
+<p class="subtitle">{{quiz.quiz.description | translate }}{{quiz.quiz.description | translate }}{{quiz.quiz.description
+    | translate }}{{quiz.quiz.description | translate}}{{quiz.quiz.description | translate }}{{quiz.quiz.description |
+    translate }}
+</p>
+<mat-divider class="divider"></mat-divider>
+
+<mat-radio-group aria-label="Select an option">
+    <mat-radio-button value="1">Option 1</mat-radio-button>
+    <mat-radio-button value="2">Option 2</mat-radio-button>
+  </mat-radio-group>

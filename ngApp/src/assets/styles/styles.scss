@@ -22,7 +22,25 @@
 
 html,
 body {
+	background-color: var(--dark);
 	height: 100%;
-	background-color: #303030;
 	margin: 0;
+
+
+
+
+
+	::-webkit-scrollbar {
+		width: 10px;
+	}
+	::-webkit-scrollbar-track {
+		-webkit-border-radius: 10px;
+		background-color:var(--dark);
+		border-radius: 10px;
+	}
+	::-webkit-scrollbar-thumb {
+		-webkit-border-radius: 10px;
+		border-radius: 10px;
+		background:var(--blue); 
+	}
 }

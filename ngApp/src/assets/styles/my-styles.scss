@@ -1,9 +1,47 @@
+
+// FONTS
 .font-1 {
     font-family: "Bungee", cursive !important;
 }
 .font-2 {
     font-family: "Righteous", cursive !important;
 }
+
+// GRADIENT TEXT
+.title {
+    @extend .font-1;
+    text-align: center;
+    font-size: 5vw !important;
+    background: linear-gradient(to right,var(--blue) 0%, var(--pink) 25%, var(--orange) 50%, var(--pink) 75%, var(--blue) 100%);
+    background-size: 200% auto;
+    background-clip: text;
+    padding: 50px 0 70px;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 6s linear infinite;
+    @keyframes shine {
+      to {
+        background-position: 200% center;
+      }
+    }
+  }
+  .subtitle {
+    @extend .font-2;
+    font-weight: bold;
+    text-align: center;
+    font-size: 25px;
+    line-height: 40px;
+    color: var(--pink);
+    padding: 20px 0;
+  }
+
+// DIVIDER
+.divider{
+    border-top-width: 6px !important;
+    border-top-color: var(--pink);
+    border-radius: 90px;
+    margin: 0 20% !important;
+  }
 
 // BUTTON
 .content-btn {
@@ -12,6 +50,7 @@
     justify-content: center;
     align-items: center;
 }
+
 .glow-on-hover {
     @extend .font-2;
     text-transform: uppercase;
@@ -26,6 +65,7 @@
     z-index: 0;
     border-radius: 45px;
 }
+
 .glow-on-hover:before {
     content: '';
     background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
@@ -45,6 +85,7 @@
 .glow-on-hover:active:after {
     background: transparent;
 }
+
 .glow-on-hover:hover:before {
     opacity: 1;
 }
