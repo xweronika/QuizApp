@@ -1,6 +1,6 @@
 // THEMES
 //@import "./my-theme.scss";
-@import "@angular/material/prebuilt-themes/purple-green.css";
+@import "@angular/material/prebuilt-themes/pink-bluegrey.css";
 @import "./my-styles.scss";
 
 // FONTS
@@ -25,10 +25,6 @@ body {
 	background-color: var(--dark);
 	height: 100%;
 	margin: 0;
-
-
-
-
 
 	::-webkit-scrollbar {
 		width: 10px;

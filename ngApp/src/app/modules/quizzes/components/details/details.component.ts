@@ -8,6 +8,8 @@ import { QuizService, QuizDetails } from '../../../../core/services/quiz.service
 })
 export class DetailsComponent implements OnInit {
   public quiz!: QuizDetails;
+  favoriteSeason: string = "";
+  seasons: string[] = ['Winter', 'Spring', 'Summer', 'Autumn'];
   constructor(public quizService: QuizService) { }
 
   ngOnInit(): void {

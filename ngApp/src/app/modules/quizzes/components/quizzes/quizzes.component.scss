@@ -1,18 +1,9 @@
 
 // BUTTON
-.card:nth-child(n) .glow-on-hover{
+.glow-on-hover{
   background-image: linear-gradient(180deg, var(--blue) 0%, rgba(255, 255, 255, 0.61) 100%);
   border: 1px solid var(--blue);
-
   }
-.card:nth-child(2n) .glow-on-hover{
-  background-image: linear-gradient(180deg, var(--orange) 0%, rgba(255, 255, 255, 0.61) 100%);
-  border: 1px solid var(--orange);
-}
-.card:nth-child(3n) .glow-on-hover{
-  background-image: linear-gradient(180deg, var(--pink) 0%, rgba(255, 255, 255, 0.61) 100%);
-  border: 1px solid var(--pink);
-}
 
 //CARDS
 .body {
