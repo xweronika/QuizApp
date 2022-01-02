@@ -1,10 +1,8 @@
 <div *ngIf="quiz">
     <h1 class="title">{{quiz.quiz.title | translate }}</h1>
-
     <mat-divider class="divider"></mat-divider>
     <p class="subtitle">{{quiz.quiz.description | translate }}</p>
-    <mat-divider class="divider"></mat-divider>
-    <br>
+    <mat-divider class="divider margin"></mat-divider>
 
     <div class="container" *ngFor="let data of quiz.details">
         <div class="box">
