@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { QuizzesComponent } from './components/quizzes/quizzes.component'
 import { AddNewComponent } from './components/add-new/add-new.component';
 import { DetailsComponent } from './components/details/details.component';
+import { ScoreComponent } from './components/score/score.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path: ':id',
     component: DetailsComponent
+  },
+  {
+    path: ':id/score',
+    component: ScoreComponent
   }
 ];
 

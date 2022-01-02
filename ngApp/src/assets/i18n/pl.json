@@ -6,7 +6,9 @@
     },
     "QUIZZES": {
         "OPEN": "Otwórz",
-        "SHARE": "Udostępnij"
+        "SHARE": "Udostępnij",
+        "SUBMIT": "Zatwierdź",
+        "YOUR_SCORE": "Twój wynik:"
     },
 
     

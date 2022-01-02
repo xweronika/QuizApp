@@ -7,6 +7,16 @@
     font-family: "Righteous", cursive !important;
 }
 
+//BOX 
+.box{
+  background: rgb(65, 65, 65);
+  border-radius: 1rem;
+  border: solid 2px var(--blue);
+}
+.box:hover{
+  border: solid 2px var(--pink);
+}
+
 // GRADIENT TEXT
 .gradient {
   background: linear-gradient(to right,var(--blue) 0%, var(--pink) 25%, var(--orange) 50%, var(--pink) 75%, var(--blue) 100%);
