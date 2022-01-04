@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
 import { environment } from '../../../environments/environment';
 
 export interface Quiz {
@@ -20,7 +19,12 @@ export interface Answer {
   answer_2: string,
   answer_3: string,
   answer_4: string,
-  correct: string
+  correct: string,
+  selected?: string;
+  id: number
+}
+export interface Selected extends Answer {
+  selected: string;
 }
 
 @Injectable({
@@ -28,13 +32,21 @@ export interface Answer {
 })
 
 export class QuizService {
-  private url = `${environment.apiURL}/quiz`;
-  constructor(private http: HttpClient, private router: Router) { }
+  private url: string = `${environment.apiURL}/quiz`;
+
+  constructor(private http: HttpClient) { }
 
   get() {
     return this.http.get<Quiz[]>(this.url);
   }
   getById(id: number) {
     return this.http.get<QuizDetails>(`${this.url}/${id}`);
+  }
+  saveScore(points: number, max: number) {
+    const score = `${points.toString()} / ${max.toString()}`
+    localStorage.setItem('score', score);
+  }
+  getScore() {
+    return localStorage.getItem('score') || "";
   }
 }

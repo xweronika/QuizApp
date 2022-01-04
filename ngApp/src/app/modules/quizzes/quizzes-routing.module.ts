@@ -15,12 +15,12 @@ const routes: Routes = [
     component: AddNewComponent
   },
   {
-    path: ':id',
-    component: DetailsComponent
+    path: 'score',
+    component: ScoreComponent
   },
   {
-    path: ':id/score',
-    component: ScoreComponent
+    path: ':id',
+    component: DetailsComponent
   }
 ];
 

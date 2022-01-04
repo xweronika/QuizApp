@@ -1,4 +1,5 @@
 const Quiz = require("../models/Quiz");
+const Question = require("../models/Question");
 
 exports.getAllQuizzes = async (req, res, next) => {
   try {
@@ -20,11 +21,11 @@ exports.addNewQuiz = async (req, res, next) => {
   }
 };
 
-exports.getQuizById = async (req, res, next) => {
+exports.getById = async (req, res, next) => {
   try {
     const quizId = req.params.id;
     const [quiz] = await Quiz.findById(quizId);
-    const [details, _] = await Quiz.findDetails(quizId);
+    const [details, _] = await Question.findById(quizId);
     res.status(200).json({ quiz: quiz[0], details: details });
   } catch (error) {
     next(error);

@@ -32,4 +32,20 @@
   border: 1px solid var(--pink);
   margin: 50px 15px;
   }
+  .glow-on-hover:disabled,
+  .glow-on-hover[disabled]{
+    background-image: linear-gradient(180deg, grey 0%, grey 100%);
+    border: 1px solid lightgray;
+  }
 
+  
+  // RADIO BUTTON
+::ng-deep .mat-radio-button.mat-accent .mat-radio-inner-circle {
+	background-color: var(--pink);
+}
+::ng-deep.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+	border-color: var(--pink);
+}
+.mat-radio-button.mat-accent.mat-radio-checked{
+  color:var(--pink); 
+}

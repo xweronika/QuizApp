@@ -8,6 +8,6 @@ router
   .get(quizControllers.getAllQuizzes)
   .post(quizControllers.addNewQuiz);
 
-router.route("/:id").get(quizControllers.getQuizById);
+router.route("/:id").get(quizControllers.getById);
 
 module.exports = router;
