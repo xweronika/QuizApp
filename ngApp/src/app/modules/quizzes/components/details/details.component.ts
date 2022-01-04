@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MatRadioChange } from '@angular/material/radio';
 import { Router } from '@angular/router';
-import { QuizService, QuizDetails, Answer } from '../../../../core/services/quiz.service';
+import { QuizService, QuizDetails } from '../../../../core/services/quiz.service';
 
 @Component({
   selector: 'app-details',
@@ -10,10 +9,11 @@ import { QuizService, QuizDetails, Answer } from '../../../../core/services/quiz
 })
 export class DetailsComponent implements OnInit {
   public data!: QuizDetails;
-  private finalArray: Array<Answer> = [];
-  public disabled_btn: Boolean = true;
+  public disabledBtn: Boolean = true;
+  public finalArray: Array<string> = [];
+  //public showScore: Boolean = this.quizService.showScore;
 
-  constructor(private quizService: QuizService, private router: Router) { }
+  constructor(public quizService: QuizService, private router: Router) { }
   ngOnInit(): void {
     this.quizService.getById(1)
       .subscribe({
@@ -24,17 +24,16 @@ export class DetailsComponent implements OnInit {
 
   submit() {
     let points = 0;
-    this.finalArray.forEach(el => {
-      if (el.selected == el.correct) points++;
+    this.data.details.forEach(el => {
+      if (this.finalArray[el.id-1] == el.correct) points++;
     });
-    this.quizService.saveScore(points, this.finalArray.length);
-    this.router.navigate(['quizzes/score']);
+    this.quizService.saveScore(points, this.data.details.length);
+    //this.router.navigate(['quizzes/score']);
+    this.quizService.showScore = true;
   }
 
-  radioChange(event: MatRadioChange, data: any) {
-    let obj = this.data.details.filter(x => x.id == data.id)[0];
-    obj.selected = event.value;
-    if (!this.finalArray.some(x => x.id == data.id)) this.finalArray.push(obj);
-    if (this.finalArray.length == this.data.details.length) this.disabled_btn = false;
+  radioChange() {
+    const array_length = this.finalArray.filter(Boolean).length;
+    if (array_length == this.data.details.length) this.disabledBtn = false;
   }
 }

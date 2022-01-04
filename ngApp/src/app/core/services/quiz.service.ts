@@ -20,19 +20,20 @@ export interface Answer {
   answer_3: string,
   answer_4: string,
   correct: string,
-  selected?: string;
   id: number
 }
-export interface Selected extends Answer {
-  selected: string;
+export interface Score {
+  points: number,
+  max: number,
 }
-
 @Injectable({
   providedIn: 'root'
 })
 
 export class QuizService {
   private url: string = `${environment.apiURL}/quiz`;
+  public score!: Score;
+  public showScore: Boolean = false;
 
   constructor(private http: HttpClient) { }
 
@@ -43,10 +44,9 @@ export class QuizService {
     return this.http.get<QuizDetails>(`${this.url}/${id}`);
   }
   saveScore(points: number, max: number) {
-    const score = `${points.toString()} / ${max.toString()}`
-    localStorage.setItem('score', score);
+    this.score = { points: points, max: max };
   }
   getScore() {
-    return localStorage.getItem('score') || "";
+    return `${this.score.points} / ${this.score.max}` || '';
   }
 }
