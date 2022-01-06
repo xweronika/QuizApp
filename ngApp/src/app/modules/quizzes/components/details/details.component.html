@@ -22,14 +22,14 @@
 
 <app-score *ngIf="quizService.showScore"></app-score>*ngIf="num===data.id" -->
 
-<div class="container" *ngIf="data">
-    <div class="card" [ngClass]="'b'+activeIndex%3" *ngFor="let details of data.details | filter:activeIndex;">
+<div class="container-glow" *ngIf="data">
+    <div class="card-glow" [ngClass]="'b'+activeIndex%3" *ngFor="let details of data.details | filter:activeIndex;">
         <span></span>
-        <div class="content">
+        <div class="content-glow">
             {{activeIndex}} / {{data.details.length}}
-            <div class="content-title">
+            <div class="content-glow-title">
                 <h2 class="font-2">{{details.question}}</h2>
-                <button *ngIf="selectedAnswer" class="btn" (click)="nextIndex()" mat-stroked-button>Next</button>
+                <button *ngIf="selectedAnswer" class="btn next-btn font-2" (click)="nextIndex()">Next</button>
             </div>
             <div *ngFor="let answer of details.answers">
                 <button

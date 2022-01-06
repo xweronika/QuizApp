@@ -11,68 +11,99 @@
 }
 
 // GLOW BOX
-.container-glow{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-  .card-glow {
-    width: 80%;
-    min-height: 500px;
-    position: relative;
-    transition: 0.5s;
-    border-radius: 3px;
-    margin: 1.4% 0 3%;
-  }
-  
-  .card-glow::before {
-    content: "";
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background: inherit;
-    top: 0;
-    left: 0;
-    filter: blur(30px);
-  }
-  
-  .card-glow.b0 {
-    background: linear-gradient(45deg, #ffcc00 0%, #ff0058 100%);
-  }
-  
-  .card-glow.b1 {
-    background: linear-gradient(315deg, #03a9f4 0%, #ff0058 100%);
-  }
-  
-  .card-glow.b2 {
-    background: linear-gradient(315deg, #4dff03 0%, #00d0ff 100%);
-  }
-  
-  .card-glow span {
-    position: absolute;
-    top: 5px;
-    left: 5px;
-    right: 5px;
-    bottom: 5px;
-    background: var(--dark);
-  }
-  
-  .content-glow {
-    position: relative;
-    z-index: 2;
-    color: #fff;
-    padding: 40px 20px;
-    text-align: center;
-  }
-  
-  .content-glow-title{
-    margin: 15px 0 40px;
-  }
 
-  .content-glow h2{
-    display: inline;
-    font-size: 2.1rem;
-    line-height: 40px;
-    margin: 0 3%;
-  }
+.container-glow{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.card-glow {
+  width: 80%;
+  min-height: 500px;
+  position: relative;
+  transition: 0.5s;
+  border-radius: 3px;
+  margin: 1.4% 0 3%;
+}
+
+.card-glow::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: inherit;
+  top: 0;
+  left: 0;
+  filter: blur(30px);
+}
+
+.card-glow.b0 {
+  background: linear-gradient(45deg, #ffcc00 0%, #ff0058 100%);
+}
+
+.card-glow.b1 {
+  background: linear-gradient(315deg, #03a9f4 0%, #ff0058 100%);
+}
+
+.card-glow.b2 {
+  background: linear-gradient(315deg, #4dff03 0%, #00d0ff 100%);
+}
+
+.card-glow span {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  background: var(--dark);
+}
+
+.content-glow {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.content-glow-title{
+  margin: 15px 0 40px;
+}
+
+.content-glow h2{
+  display: inline;
+  font-size: 2.1rem;
+  line-height: 40px;
+  margin: 0 3%;
+}
+
+
+//block btns
+.block-btn{
+  background: white; 
+  color: black;
+  font-size: 1.8rem;
+  border-radius: 3px;
+  font-weight: bold;
+  padding: 17px;
+  margin: 20px auto;
+  border: 0;
+  width: 80%;
+  display:block;
+}
+
+// small btn
+.btn {
+  border: solid 2px white;
+  background-color: rgba(255, 255, 255, 0); 
+  color: white;
+  vertical-align: middle;
+  border-radius: 5px;
+  font-weight: bold;
+  min-width: 90px;
+  text-transform: uppercase;
+}
+.btn:hover{
+  background-color: rgba(255, 255, 255, 0.123);
+}
