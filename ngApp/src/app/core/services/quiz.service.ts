@@ -30,7 +30,6 @@ export interface Score {
 export class QuizService {
   private url: string = `${environment.apiURL}/quiz`;
   public score!: Score;
-  public showScore: Boolean = false;
 
   constructor(private http: HttpClient) { }
 
@@ -44,6 +43,7 @@ export class QuizService {
     this.score = { points: points, max: max };
   }
   getScore() {
+    if (!this.score) return '';
     return `${this.score.points} / ${this.score.max}` || '';
   }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Subscription, map, switchMap } from 'rxjs';
 import { QuizService, QuizDetails } from '../../../../core/services/quiz.service';
 
 @Component({
@@ -9,29 +10,30 @@ import { QuizService, QuizDetails } from '../../../../core/services/quiz.service
 })
 export class DetailsComponent implements OnInit {
   public data!: QuizDetails;
-  public activeIndex: number = 1;
+  public activeIndex: number = 0;
   public selectedAnswer: string | null = null;
   private correctAnswer: string | null = null;
   private points: number = 0;
+  private subscribe!: Subscription;
 
-  constructor(public quizService: QuizService, private router: Router) { }
+  constructor(
+    public quizService: QuizService,
+    private router: Router,
+    private route: ActivatedRoute) { }
+
   ngOnInit(): void {
-    this.quizService.getById(1)
+    this.subscribe = this.route.params.pipe(
+      map(({ id }) => id),
+      switchMap((id: number) => this.quizService.getById(id)))
       .subscribe({
-        next: res => { this.data = res; console.log(res) },
+        next: res => { this.data = res;},
         error: err => { console.log(err.error) }
       });
   }
 
-  // submit() {
-  //   let points = 0;
-  //   this.data.details.forEach(el => {
-  //     if (this.finalArray[el.index - 1] == el.correct) points++;
-  //   });
-  //   this.quizService.saveScore(points, this.data.details.length);
-  //   //this.router.navigate(['quizzes/score']);
-  //   this.quizService.showScore = true;
-  // }
+  ngOnDestroy() {
+    this.subscribe.unsubscribe();
+  }
 
   onClick(answer: string, correct: string) {
     if (this.selectedAnswer) return false;
@@ -46,8 +48,7 @@ export class DetailsComponent implements OnInit {
     if (this.data.details.length == this.activeIndex) {
       this.quizService.saveScore(this.points, this.data.details.length);
       this.router.navigate(['quizzes/score']);
-    }
-    else this.activeIndex += 1
+    } else this.activeIndex += 1
 
   }
   checkCorrect(current: string) {
@@ -59,3 +60,7 @@ export class DetailsComponent implements OnInit {
     return current != this.correctAnswer ? true : false;
   }
 }
+function ngOnDestroy() {
+  throw new Error('Function not implemented.');
+}
+

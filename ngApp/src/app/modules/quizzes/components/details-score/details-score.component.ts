@@ -14,6 +14,6 @@ export class DetailsScoreComponent implements OnInit {
   ngOnInit(): void {
     this.quizService.getScore() ?
       this.score = this.quizService.getScore()
-      : this.router.navigate(['quizzes']);;
+      : this.router.navigate(['quizzes']);
   }
 }

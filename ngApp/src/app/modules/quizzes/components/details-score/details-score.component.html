@@ -1,14 +1,13 @@
-<!-- <mat-divider class="divider margin"></mat-divider>
-<p class="subtitle">{{'QUIZZES.YOUR_SCORE' | translate }}</p>
-<mat-divider class="divider"></mat-divider> -->
-
-<div class="center">
-    <div class="box" style="width: 50%;">
-        <h1 class="title" style="line-height: 80px;" *ngIf="score">{{score}}</h1>
+<div class="container-glow">
+    <div class="card-glow b2">
+        <span></span>
+        <div class="content-glow">
+            <div class="content-glow-title">
+                <h2 class="font-2">{{'QUIZZES.YOUR_SCORE' | translate }}</h2>
+            </div>
+            <button class="block-btn margin font-2">{{score}}</button>
+            <button class="btn font-2">Try gain</button>
+            <button class="btn font-2">Quizzes</button>
+        </div>
     </div>
-</div>
-
-<div class="center">
-    <button class="glow-on-hover" style="margin: 60px;" type="button" routerLink="/quizzes">
-        {{'QUIZZES.SUBMIT' | translate }}</button>
 </div>

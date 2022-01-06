@@ -1,48 +1,20 @@
-<!-- <div *ngIf="data">
-    <h1 class="title">{{data.quiz.title | translate }}</h1>
-    <mat-divider class="divider"></mat-divider>
-    <p class="subtitle">{{data.quiz.description | translate }}</p>
-    <mat-divider class="divider margin"></mat-divider>
-    <div class="center" *ngFor="let data of data.details">
-        <div class="box">
-            <h2 class="question gradient font-2">{{data.question}}</h2>
-            <mat-radio-group [(ngModel)]="finalArray[data.id-1]" (change)="radioChange()">
-                <mat-radio-button class="answer font-2" [value]="data.answer_1">{{data.answer_1}}</mat-radio-button>
-                <mat-radio-button class="answer font-2" [value]="data.answer_2">{{data.answer_2}}</mat-radio-button>
-                <mat-radio-button class="answer font-2" [value]="data.answer_3">{{data.answer_3}}</mat-radio-button>
-                <mat-radio-button class="answer font-2" [value]="data.answer_4">{{data.answer_4}}</mat-radio-button>
-            </mat-radio-group>
-        </div>
-    </div>
-    <div class="center">
-        <button [disabled]="disabledBtn" (click)="submit()" class="glow-on-hover" type="button">{{'QUIZZES.SUBMIT' |
-            translate }}</button>
-    </div>
-</div>
-<app-score *ngIf="quizService.showScore"></app-score>*ngIf="num===data.id" -->
-
-
 <div class="container-glow" *ngIf="data">
     <div class="card-glow" [ngClass]="'b'+activeIndex%3" *ngFor="let details of data.details | filter:activeIndex;">
         <span></span>
-        <div *ngIf="activeIndex" class="content-glow">
-            {{activeIndex}} / {{data.details.length}}<br>
+        <div *ngIf="activeIndex" class="content-glow">{{activeIndex}} / {{data.details.length}}<br>
             <div class="content-glow-title">
                 <h2 class="font-2">{{details.question}}</h2><br>
                 <mat-icon *ngIf="selectedAnswer" class="icon" (click)="onNext()">arrow_forward</mat-icon>
             </div>
-            <div *ngFor="let answer of details.answers">
-                <button
+            <div *ngFor="let answer of details.answers"><button
                     [ngClass]="{'b-green': checkCorrect(answer), 'b-red': checkWrong(answer), 'btn-hover': !selectedAnswer}"
-                    (click)="onClick(answer,details.correct) " class="block-btn font-2">{{answer}}</button>
-            </div>
+                    (click)="onClick(answer,details.correct) " class="block-btn font-2">{{answer}}</button></div>
         </div>
         <div *ngIf="!activeIndex" class="content-glow">
             <div class="content-glow-title">
                 <h2 class="font-2">{{data.quiz.category}}</h2>
-            </div>
-            <button class="block-btn block-desc font-2">{{data.quiz.description}}</button>
-            <button class="btn font-2" (click)="onNext()">Start</button>
+            </div><button class="block-btn margin font-2">{{data.quiz.description}}</button><button
+                class="btn font-2" (click)="onNext()">Start</button>
         </div>
     </div>
 </div>
