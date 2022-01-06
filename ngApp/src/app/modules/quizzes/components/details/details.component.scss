@@ -1,15 +1,23 @@
 
 .next-btn{
   position: absolute;
-  line-height: 37px;
-  margin: 0 20px;
+  margin: 10px 50px;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1500px) {
   .next-btn {
       margin: 10px;
-      position: initial;
+      position: relative;
   }
+  .content-glow h2{
+    display: block;
+  }
+}
+
+// start description
+.block-desc {
+  padding: 2%; 
+  margin-bottom: 40px;
 }
 
 //block btn

@@ -5,7 +5,8 @@ import { Answer } from '../../core/services/quiz.service'
 })
 export class FilterPipe implements PipeTransform {
   transform(items: Array<Answer>, filter: number): Array<Answer> {
-    if (!items || !filter) return items;
+    if (!items) return items;
+    if (!filter) filter = 1;
     return items.filter(item => item.index == filter);
   }
 }

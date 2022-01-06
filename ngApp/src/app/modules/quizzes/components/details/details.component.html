@@ -19,16 +19,16 @@
             translate }}</button>
     </div>
 </div>
-
 <app-score *ngIf="quizService.showScore"></app-score>*ngIf="num===data.id" -->
+
 
 <div class="container-glow" *ngIf="data">
     <div class="card-glow" [ngClass]="'b'+activeIndex%3" *ngFor="let details of data.details | filter:activeIndex;">
         <span></span>
-        <div class="content-glow">
+        <div *ngIf="activeIndex" class="content-glow">
             {{activeIndex}} / {{data.details.length}}
             <div class="content-glow-title">
-                <h2 class="font-2">{{details.question}}</h2>
+                <h2 class="font-2">{{details.question}}{{details.question}}{{details.question}}{{details.question}}{{details.question}}</h2>
                 <button *ngIf="selectedAnswer" class="btn next-btn font-2" (click)="nextIndex()">Next</button>
             </div>
             <div *ngFor="let answer of details.answers">
@@ -36,6 +36,14 @@
                     [ngClass]="{'b-green': checkCorrect(answer), 'b-red': checkWrong(answer), 'btn-hover': !selectedAnswer}"
                     (click)="onNext(answer,details.correct) " class="block-btn font-2">{{answer}}</button>
             </div>
+        </div>
+        <div *ngIf="!activeIndex" class="content-glow">
+            <div class="content-glow-title">
+                <h2 class="font-2">{{data.quiz.category}}</h2>
+            </div>
+            <button
+                class="block-btn block-desc font-2">{{data.quiz.description}}</button>
+            <button class="btn font-2" (click)="nextIndex()">Start</button>
         </div>
     </div>
 </div>

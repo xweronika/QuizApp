@@ -68,7 +68,7 @@
 }
 
 .content-glow-title{
-  margin: 15px 0 40px;
+  margin: 15px 10% 40px;
 }
 
 .content-glow h2{
@@ -101,8 +101,9 @@
   vertical-align: middle;
   border-radius: 5px;
   font-weight: bold;
-  min-width: 90px;
+  min-width: 110px;
   text-transform: uppercase;
+  line-height: 37px;
 }
 .btn:hover{
   background-color: rgba(255, 255, 255, 0.123);

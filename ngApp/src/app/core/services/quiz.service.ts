@@ -4,7 +4,7 @@ import { environment } from '../../../environments/environment';
 
 export interface Quiz {
   id: number,
-  title: string,
+  category: string,
   description: string,
   language: string,
   created_at: Date

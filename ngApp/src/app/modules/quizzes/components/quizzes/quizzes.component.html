@@ -21,7 +21,7 @@
         <div class="box" *ngFor="let quiz of quizzes" [routerLink]="quiz.id.toString()">
             <span></span>
             <div class="content">
-                <h2 class="font-2">{{quiz.title | translate}}</h2>
+                <h2 class="font-2">{{quiz.category | translate}}</h2>
                 <p class="font-2">
                     {{quiz.description}}{{quiz.description}}{{quiz.description}}{{quiz.description}}{{quiz.description}}{{quiz.description}}
                 </p>

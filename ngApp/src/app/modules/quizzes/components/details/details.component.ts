@@ -9,7 +9,7 @@ import { QuizService, QuizDetails } from '../../../../core/services/quiz.service
 })
 export class DetailsComponent implements OnInit {
   public data!: QuizDetails;
-  public activeIndex = 1;
+  public activeIndex = 0;
   public selectedAnswer: string | null = null;
   private correctAnswer: string | null = null;
 
