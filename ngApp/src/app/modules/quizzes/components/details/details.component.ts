@@ -12,6 +12,7 @@ export class DetailsComponent implements OnInit {
   public disabledBtn: Boolean = true;
   public finalArray: Array<string> = [];
   //public showScore: Boolean = this.quizService.showScore;
+  public num = 1;
 
   constructor(public quizService: QuizService, private router: Router) { }
   ngOnInit(): void {

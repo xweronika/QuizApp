@@ -1,4 +1,4 @@
-<div class="body">
+<!-- <div class="body">
     <div class="container">
         <div class="card" *ngFor="let quiz of quizzes">
             <div class="face face1">
@@ -14,5 +14,21 @@
                 <h2 class="font-2">{{quiz.title | translate}}</h2>
             </div>
         </div>
+    </div>
+</div> -->
+<div class="body">
+    <div class="container">
+        <div class="box" *ngFor="let quiz of quizzes" [routerLink]="quiz.id.toString()">
+            <span></span>
+            <div class="content">
+                <h2 class="font-2">{{quiz.title | translate}}</h2>
+                <p class="font-2">
+                    {{quiz.description}}{{quiz.description}}{{quiz.description}}{{quiz.description}}{{quiz.description}}{{quiz.description}}
+                </p>
+            </div>
+        </div>
+
+
+
     </div>
 </div>

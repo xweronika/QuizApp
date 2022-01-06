@@ -1,4 +1,4 @@
-<div *ngIf="data">
+<!-- <div *ngIf="data">
     <h1 class="title">{{data.quiz.title | translate }}</h1>
     <mat-divider class="divider"></mat-divider>
     <p class="subtitle">{{data.quiz.description | translate }}</p>
@@ -20,4 +20,16 @@
     </div>
 </div>
 
-<app-score *ngIf="quizService.showScore"></app-score>
+<app-score *ngIf="quizService.showScore"></app-score>*ngIf="num===data.id" -->
+
+<div class="container" *ngIf="data" >
+    <div class="card" *ngFor="let data of data.details">
+        <span></span>
+        <div class="content" > <button (click)="num+1">aaaa</button>
+            <h2 class="font-2">{{data.question}}</h2>
+            <button class="block-btn font-2" >{{data.answer_1}}</button>
+            <button class="block-btn font-2">{{data.answer_2}}</button>
+            <button class="block-btn font-2">{{data.answer_3}}</button>
+            <button class="block-btn font-2">{{data.answer_4}}</button>
+        </div>
+    </div>

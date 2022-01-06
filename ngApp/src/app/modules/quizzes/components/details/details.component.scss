@@ -1,51 +1,137 @@
-.box {
-  padding: 0 7% 38px 8%;
-  margin: 15px;
-}
+// .box {
+//   padding: 0 7% 38px 8%;
+//   margin: 15px;
+// }
 
-.question {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin: 2rem 0 1rem ;
-}
-  .answer {
-    display: block;
-    position: relative;
-    height: 1.4em;
-    font-size: 1.4rem;
-    color:  var(--blue);
-    letter-spacing: 2px;
-    margin: 0 0 0 10%;
-  }
-  .answer:hover {
-    color: var(--pink);
-  }
+// .question {
+//   font-size: 1.5rem;
+//   font-weight: bold;
+//   margin: 2rem 0 1rem ;
+// }
+//   .answer {
+//     display: block;
+//     position: relative;
+//     height: 1.4em;
+//     font-size: 1.4rem;
+//     color:  var(--blue);
+//     letter-spacing: 2px;
+//     margin: 0 0 0 10%;
+//   }
+//   .answer:hover {
+//     color: var(--pink);
+//   }
 
-.margin {
-  margin-bottom: 40px !important;
-}
+// .margin {
+//   margin-bottom: 40px !important;
+// }
 
-// BUTTON
-.glow-on-hover{
-  width: 300px;
-  background-image: linear-gradient(180deg, var(--pink) 0%, var(--blue) 100%);
-  border: 1px solid var(--pink);
-  margin: 50px 15px;
-  }
-  .glow-on-hover:disabled,
-  .glow-on-hover[disabled]{
-    background-image: linear-gradient(180deg, grey 0%, grey 100%);
-    border: 1px solid lightgray;
-  }
+// // BUTTON
+// .glow-on-hover{
+//   width: 300px;
+//   background-image: linear-gradient(180deg, var(--pink) 0%, var(--blue) 100%);
+//   border: 1px solid var(--pink);
+//   margin: 50px 15px;
+//   }
+//   .glow-on-hover:disabled,
+//   .glow-on-hover[disabled]{
+//     background-image: linear-gradient(180deg, grey 0%, grey 100%);
+//     border: 1px solid lightgray;
+//   }
 
   
-  // RADIO BUTTON
-::ng-deep .mat-radio-button.mat-accent .mat-radio-inner-circle {
-	background-color: var(--pink);
+//   // RADIO BUTTON
+// ::ng-deep .mat-radio-button.mat-accent .mat-radio-inner-circle {
+// 	background-color: var(--pink);
+// }
+// ::ng-deep.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+// 	border-color: var(--pink);
+// }
+// .mat-radio-button.mat-accent.mat-radio-checked{
+//   color:var(--pink); 
+// }
+
+
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
-::ng-deep.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
-	border-color: var(--pink);
+.card {
+  width: 80%;
+  min-height: 500px;
+  margin: 5% 30px 5%;
+  padding: 5px;
+  position: relative;
+  transition: 0.5s;
+  border-radius: 3px;
 }
-.mat-radio-button.mat-accent.mat-radio-checked{
-  color:var(--pink); 
+.card::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: inherit;
+  top: 0;
+  left: 0;
+  filter: blur(30px);
+}
+.card:nth-child(1){
+  margin: 0 20px 20px;
+}
+.card:nth-child(n)::before,
+.card:nth-child(n),
+.block-btn:nth-child(n):hover, 
+.block-btn:nth-child(n):focus
+ {
+  background: linear-gradient(45deg, #ffcc00 0%, #ff0058 100%);
+}
+
+.card:nth-child(2n)::before,
+.card:nth-child(2n),
+.text-box:nth-child(2n):focus,
+  .text-box:nth-child(2n):hover {
+  background: linear-gradient(315deg, #03a9f4 0%, #ff0058 100%);
+}
+
+.card:nth-child(3n)::before,
+.card:nth-child(3n),
+.text-box:nth-child(3n):hover,
+  .text-box:nth-child(3n):focus {
+  background: linear-gradient(315deg, #4dff03 0%, #00d0ff 100%);
+}
+
+.card span {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  background: var(--dark);
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+}
+.content h2{
+  margin-bottom: 35px;
+  font-size: 2.1rem;
+  line-height: 40px;
+}
+
+.block-btn{
+  background: white; 
+  color: black;
+  font-size: 1.8rem;
+  border-radius: 3px;
+  font-weight: bold;
+  padding: 17px;
+  margin: 20px auto;
+  border: 0;
+  width: 80%;
+  display:block;
 }

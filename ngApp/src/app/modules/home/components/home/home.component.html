@@ -1,11 +1,25 @@
-<div class="body font-1">
-    <div class="link-container">
-        <a class="link-two" href="quizzes">{{'HOME.QUIZZES' | translate }}</a>
-    </div>
-    <div class="link-container">
-        <a class="link-one" href="quizzes/add-new">{{'HOME.ADD_NEW' | translate }}</a>
-    </div>
-    <div class="link-container">
-        <a class="link-three" href="info">{{'HOME.INFO' | translate }}</a>
+<div class="body">
+    <div class="container">
+
+        <div class="card" routerLink="quizzes">
+            <span></span>
+            <div class="content">
+                <h2 class="font-1">{{'HOME.QUIZZES' | translate }}</h2>
+            </div>
+        </div>
+
+        <div class="card" routerLink="quizzes">
+            <span></span>
+            <div class="content">
+                <h2 class="font-1">{{'HOME.ADD_NEW' | translate }}</h2>
+            </div>
+        </div>
+
+        <div class="card" routerLink="info">
+            <span></span>
+            <div class="content">
+                <h2 class="font-1">{{'HOME.INFO' | translate }}</h2>
+            </div>
+        </div>
     </div>
 </div>

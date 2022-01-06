@@ -4,20 +4,19 @@
 @import "./my-styles.scss";
 
 // FONTS
-@font-face {
-	font-family: "Bungee";
-	src: url(../fonts/Bungee-Regular.ttf) format("opentype");
-}
-@font-face {
-	font-family: "Righteous";
-	src: url(../fonts/Righteous-Regular.ttf) format("opentype");
-}
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Poppins:wght@300;400;500;700&display=swap');
+
+// @font-face {
+// 	font-family: "Bungee";
+// 	src: url(../fonts/Bungee-Regular.ttf) format("opentype");
+// }
+
 :root {
 // COLORS
 --orange: #eb7132;
 --pink: #f27b9b;
 --blue: #53d9d1;
---dark: #303030;
+--dark: #1d061a;
 }
 
 html,
