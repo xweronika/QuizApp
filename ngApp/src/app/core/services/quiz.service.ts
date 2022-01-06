@@ -22,6 +22,7 @@ export interface Answer {
 export interface Score {
   points: number,
   max: number,
+  quiz_id: number,
 }
 @Injectable({
   providedIn: 'root'
@@ -39,8 +40,8 @@ export class QuizService {
   getById(id: number) {
     return this.http.get<QuizDetails>(`${this.url}/${id}`);
   }
-  saveScore(points: number, max: number) {
-    this.score = { points: points, max: max };
+  saveScore(points: number, max: number, id: number) {
+    this.score = { points: points, max: max, quiz_id: id };
   }
   getScore() {
     if (!this.score) return '';

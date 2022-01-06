@@ -9,7 +9,7 @@
 }
 
 .mat-option.mat-selected:not(.mat-option-multiple):not(.mat-option-disabled){
-  color: var(--blue);
+  color: #00d0ff;
 }
 
 
@@ -18,8 +18,8 @@
     text-indent: -9999em;
   }
   $dot-menu-size: 55px;
-  $dot-menu-dot-color: var(--blue);
-  $dot-menu-dot-color-active: var(--orange);
+  $dot-menu-dot-color: #00d0ff;
+  $dot-menu-dot-color-active: #4dff03;
   $dot-menu-dot-size: 9.16px;
   @mixin dot-menu-circle {
     content: "";

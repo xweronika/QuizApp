@@ -13,9 +13,6 @@
 
 :root {
 // COLORS
---orange: #eb7132;
---pink: #f27b9b;
---blue: #53d9d1;
 --dark: #1d061a;
 }
 
@@ -25,8 +22,9 @@ body {
 	height: 100%;
 	margin: 0;
 
+	// scroll bar
 	::-webkit-scrollbar {
-		width: 10px;
+		width: 9px;
 	}
 	::-webkit-scrollbar-track {
 		-webkit-border-radius: 10px;
@@ -36,6 +34,9 @@ body {
 	::-webkit-scrollbar-thumb {
 		-webkit-border-radius: 10px;
 		border-radius: 10px;
-		background:var(--blue); 
+		background: linear-gradient(45deg, #ffcc00 0%, #ff0058 100%);
+	}
+	::-webkit-scrollbar-thumb:hover {
+		background: linear-gradient(45deg, #ffcc0098 0%, #ff0059bb 100%);
 	}
 }

@@ -10,14 +10,18 @@ import { environment } from '../../../../environments/environment';
 export class LanguageSwitcherComponent implements OnInit {
   public names: object | any = environment.supported_langs;
   private supported_langs: Array<string> = Object.keys(environment.supported_langs);
-  private browserLang: string = this.translate.getBrowserLang() || '';
+  private currentLang: string = localStorage.getItem('language') || this.translate.getBrowserLang() || '';
 
   constructor(public translate: TranslateService) {
     translate.addLangs(this.supported_langs);
     translate.setDefaultLang(environment.default_lang);
-    translate.use(this.supported_langs.includes(this.browserLang)
-      ? this.browserLang
+    translate.use(this.supported_langs.includes(this.currentLang)
+      ? this.currentLang
       : environment.default_lang);
   }
   ngOnInit(): void { }
+  changeLanguage(langselect: string) {
+    localStorage.setItem('language', langselect)
+    this.translate.use(langselect);
+  }
 }

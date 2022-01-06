@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription, map, switchMap } from 'rxjs';
 import { QuizService, QuizDetails } from '../../../../core/services/quiz.service';
@@ -8,7 +8,7 @@ import { QuizService, QuizDetails } from '../../../../core/services/quiz.service
   templateUrl: './details.component.html',
   styleUrls: ['./details.component.scss']
 })
-export class DetailsComponent implements OnInit {
+export class DetailsComponent implements OnInit, OnDestroy {
   public data!: QuizDetails;
   public activeIndex: number = 0;
   public selectedAnswer: string | null = null;
@@ -26,41 +26,35 @@ export class DetailsComponent implements OnInit {
       map(({ id }) => id),
       switchMap((id: number) => this.quizService.getById(id)))
       .subscribe({
-        next: res => { this.data = res;},
+        next: res => { this.data = res; },
         error: err => { console.log(err.error) }
       });
   }
-
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     this.subscribe.unsubscribe();
   }
-
-  onClick(answer: string, correct: string) {
+  onClick(answer: string, correct: string): Boolean {
     if (this.selectedAnswer) return false;
     if (answer == correct) this.points += 1;
     this.selectedAnswer = answer;
     this.correctAnswer = correct;
     return true;
   }
-  onNext() {
+  onNext(): void {
     this.selectedAnswer = null;
     this.correctAnswer = null;
     if (this.data.details.length == this.activeIndex) {
-      this.quizService.saveScore(this.points, this.data.details.length);
+      this.quizService.saveScore(this.points, this.data.details.length, this.data.quiz.id);
       this.router.navigate(['quizzes/score']);
     } else this.activeIndex += 1
-
   }
-  checkCorrect(current: string) {
+  checkCorrect(current: string): Boolean {
     if (!this.selectedAnswer) return false;
     return current == this.correctAnswer ? true : false;
   }
-  checkWrong(current: string) {
+  checkWrong(current: string): Boolean {
     if (current != this.selectedAnswer) return false;
     return current != this.correctAnswer ? true : false;
   }
-}
-function ngOnDestroy() {
-  throw new Error('Function not implemented.');
 }
 

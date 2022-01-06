@@ -5,10 +5,12 @@ import { HomeRoutingModule } from './home-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import { SharedModule } from '../../shared/shared.module';
+import { InfoComponent } from './components/info/info.component';
 
 @NgModule({
   declarations: [
-    HomeComponent
+    HomeComponent,
+    InfoComponent
   ],
   imports: [
     CommonModule,
