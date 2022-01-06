@@ -9,9 +9,10 @@ import { QuizService, QuizDetails } from '../../../../core/services/quiz.service
 })
 export class DetailsComponent implements OnInit {
   public data!: QuizDetails;
-  public activeIndex = 0;
+  public activeIndex: number = 1;
   public selectedAnswer: string | null = null;
   private correctAnswer: string | null = null;
+  private points: number = 0;
 
   constructor(public quizService: QuizService, private router: Router) { }
   ngOnInit(): void {
@@ -32,11 +33,23 @@ export class DetailsComponent implements OnInit {
   //   this.quizService.showScore = true;
   // }
 
-  onNext(answer: string, correct: string) {
-    if (!this.selectedAnswer) this.selectedAnswer = answer;
+  onClick(answer: string, correct: string) {
+    if (this.selectedAnswer) return false;
+    if (answer == correct) this.points += 1;
+    this.selectedAnswer = answer;
     this.correctAnswer = correct;
+    return true;
   }
+  onNext() {
+    this.selectedAnswer = null;
+    this.correctAnswer = null;
+    if (this.data.details.length == this.activeIndex) {
+      this.quizService.saveScore(this.points, this.data.details.length);
+      this.router.navigate(['quizzes/score']);
+    }
+    else this.activeIndex += 1
 
+  }
   checkCorrect(current: string) {
     if (!this.selectedAnswer) return false;
     return current == this.correctAnswer ? true : false;
@@ -44,10 +57,5 @@ export class DetailsComponent implements OnInit {
   checkWrong(current: string) {
     if (current != this.selectedAnswer) return false;
     return current != this.correctAnswer ? true : false;
-  }
-  nextIndex() {
-    this.selectedAnswer = null;
-    this.correctAnswer = null;
-    this.activeIndex += 1
   }
 }

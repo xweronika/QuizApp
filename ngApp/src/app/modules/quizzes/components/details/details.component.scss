@@ -1,23 +1,21 @@
 
-.next-btn{
-  position: absolute;
-  margin: 10px 50px;
-}
 
-@media screen and (max-width: 1500px) {
-  .next-btn {
-      margin: 10px;
-      position: relative;
-  }
-  .content-glow h2{
-    display: block;
-  }
-}
 
 // start description
 .block-desc {
   padding: 2%; 
   margin-bottom: 40px;
+}
+
+// icon next
+.icon{
+ font-size: 45px; 
+ cursor: pointer;
+ margin: 0 1%;
+}
+.icon:hover{
+  color: rgb(177, 175, 175);
+  font-size: 47px;
 }
 
 //block btn
