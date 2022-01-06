@@ -9,10 +9,9 @@ import { QuizService, QuizDetails } from '../../../../core/services/quiz.service
 })
 export class DetailsComponent implements OnInit {
   public data!: QuizDetails;
-  public disabledBtn: Boolean = true;
-  public finalArray: Array<string> = [];
-  //public showScore: Boolean = this.quizService.showScore;
-  public num = 1;
+  public activeIndex = 1;
+  public selectedAnswer: string | null = null;
+  private correctAnswer: string | null = null;
 
   constructor(public quizService: QuizService, private router: Router) { }
   ngOnInit(): void {
@@ -23,18 +22,32 @@ export class DetailsComponent implements OnInit {
       });
   }
 
-  submit() {
-    let points = 0;
-    this.data.details.forEach(el => {
-      if (this.finalArray[el.id-1] == el.correct) points++;
-    });
-    this.quizService.saveScore(points, this.data.details.length);
-    //this.router.navigate(['quizzes/score']);
-    this.quizService.showScore = true;
+  // submit() {
+  //   let points = 0;
+  //   this.data.details.forEach(el => {
+  //     if (this.finalArray[el.index - 1] == el.correct) points++;
+  //   });
+  //   this.quizService.saveScore(points, this.data.details.length);
+  //   //this.router.navigate(['quizzes/score']);
+  //   this.quizService.showScore = true;
+  // }
+
+  onNext(answer: string, correct: string) {
+    if (!this.selectedAnswer) this.selectedAnswer = answer;
+    this.correctAnswer = correct;
   }
 
-  radioChange() {
-    const array_length = this.finalArray.filter(Boolean).length;
-    if (array_length == this.data.details.length) this.disabledBtn = false;
+  checkCorrect(current: string) {
+    if (!this.selectedAnswer) return false;
+    return current == this.correctAnswer ? true : false;
+  }
+  checkWrong(current: string) {
+    if (current != this.selectedAnswer) return false;
+    return current != this.correctAnswer ? true : false;
+  }
+  nextIndex() {
+    this.selectedAnswer = null;
+    this.correctAnswer = null;
+    this.activeIndex += 1
   }
 }

@@ -21,7 +21,8 @@ export const transLoader = {
     exports: [
         HttpClientModule,
         MaterialModule,
-        FormsModule
-    ]
+        FormsModule,
+    ],
+
 })
 export class SharedModule { }

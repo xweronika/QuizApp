@@ -7,8 +7,7 @@ class Question {
   }
   
   static findById(id) {
-    let sql = `SELECT answer_1, answer_2, 
-    answer_3, answer_4, correct, question, id
+    let sql = `SELECT question, answers, correct
     FROM questions WHERE quiz_id = ${id};`;
     return db.execute(sql);
   }

@@ -15,12 +15,9 @@ export interface QuizDetails {
 }
 export interface Answer {
   question: string,
-  answer_1: string,
-  answer_2: string,
-  answer_3: string,
-  answer_4: string,
+  answers: Array<string>,
   correct: string,
-  id: number
+  index: number
 }
 export interface Score {
   points: number,

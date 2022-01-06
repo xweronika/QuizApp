@@ -6,15 +6,15 @@ import { QuizzesRoutingModule } from './quizzes-routing.module';
 import { TranslateModule } from '@ngx-translate/core';
 import { SharedModule } from '../../shared/shared.module';
 import { DetailsComponent } from './components/details/details.component';
-import { ScoreComponent } from './components/score/score.component';
-
-
+import { FilterPipe } from '../../shared/pipes/filter.pipe';
+import { DetailsScoreComponent } from './components/details-score/details-score.component';
 @NgModule({
   declarations: [
     QuizzesComponent,
     AddNewComponent,
     DetailsComponent,
-    ScoreComponent
+    DetailsScoreComponent,
+    FilterPipe
   ],
   providers: [],
   imports: [

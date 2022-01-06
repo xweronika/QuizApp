@@ -1,17 +1,13 @@
 import { NgModule } from '@angular/core';
 import { MatSelectModule } from '@angular/material/select';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatRadioModule } from '@angular/material/radio';
-import { MatDividerModule } from '@angular/material/divider';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   exports: [
     MatSelectModule,
     MatToolbarModule,
-    MatFormFieldModule,
-    MatRadioModule,
-    MatDividerModule
+    MatButtonModule
   ]
 })
 export class MaterialModule { }

@@ -10,128 +10,69 @@
     font-family: consolas !important;
 }
 
-//BOX 
-// .box{
-//   background: rgb(65, 65, 65);
-//   border-radius: 1rem;
-//   border: solid 2px var(--blue);
-// }
-// .box:hover{
-//   border: solid 2px var(--pink);
-// }
-
-// // GRADIENT TEXT
-// .gradient {
-//   background: linear-gradient(to right,var(--blue) 0%, var(--pink) 25%, var(--orange) 50%, var(--pink) 75%, var(--blue) 100%);
-//   background-size: 200% auto;
-//   background-clip: text;
-//   -webkit-background-clip: text;
-//   -webkit-text-fill-color: transparent;
-//   animation: shine 15s linear infinite;
-//   @keyframes shine {
-//     to {
-//       background-position: 200% center;
-//     }
-//   }
-// }
-// .title {
-//     @extend .font-1, .gradient;
-//     animation: shine 6s linear infinite !important;
-//     text-align: center;
-//     font-size: calc(29px + 3.3vw) !important;
-//     padding: 50px 0 70px;
-//   }
-//   .subtitle {
-//     @extend .font-2;
-//     text-align: center;
-//     font-size: calc(14px + 0.7vw);
-//     line-height: 40px;
-//     color: var(--pink);
-//     padding: 20px 0;
-//   }
-
-// // DIVIDER
-// .divider{
-//     border-top-width: 6px !important;
-//     border-top-color: var(--pink);
-//     border-radius: 90px;
-//   }
+// GLOW BOX
+.container-glow{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .card-glow {
+    width: 80%;
+    min-height: 500px;
+    position: relative;
+    transition: 0.5s;
+    border-radius: 3px;
+    margin: 1.4% 0 3%;
+  }
   
-// // BUTTON
-// .content-btn {
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: center;
-//     align-items: center;
-// }
+  .card-glow::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: inherit;
+    top: 0;
+    left: 0;
+    filter: blur(30px);
+  }
+  
+  .card-glow.b0 {
+    background: linear-gradient(45deg, #ffcc00 0%, #ff0058 100%);
+  }
+  
+  .card-glow.b1 {
+    background: linear-gradient(315deg, #03a9f4 0%, #ff0058 100%);
+  }
+  
+  .card-glow.b2 {
+    background: linear-gradient(315deg, #4dff03 0%, #00d0ff 100%);
+  }
+  
+  .card-glow span {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    background: var(--dark);
+  }
+  
+  .content-glow {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  .content-glow-title{
+    margin: 15px 0 40px;
+  }
 
-// .glow-on-hover {
-//     @extend .font-2;
-//     text-transform: uppercase;
-//     width: 220px;
-//     height: 50px;
-//     border: none;
-//     outline: none;
-//     font-size: 18px;
-//     letter-spacing: 2.2px;
-//     cursor: pointer;
-//     position: relative;
-//     z-index: 0;
-//     border-radius: 45px;
-// }
-
-// .glow-on-hover:before {
-//     content: '';
-//     background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
-//     position: absolute;
-//     top: -2px;
-//     left:-2px;
-//     background-size: 400%;
-//     z-index: -1;
-//     filter: blur(5px);
-//     width: calc(100% + 4px);
-//     height: calc(100% + 4px);
-//     animation: glowing 20s linear infinite;
-//     opacity: 0;
-//     transition: opacity .3s ease-in-out;
-//     border-radius: 45px;
-// }
-// .glow-on-hover:active:after {
-//     background: transparent;
-// }
-
-// .glow-on-hover:hover:before {
-//     opacity: 1;
-// }
-
-// @keyframes glowing {
-//     0% { background-position: 0 0; }
-//     50% { background-position: 400% 0; }
-//     100% { background-position: 0 0; }
-// }
-
-// // CENTER 
-// .center {  
-//   display: flex; 
-//   align-items: center; 
-//   justify-content: center;
-// }
-
-// //MEDIA
-// @media screen and (min-width: 1000px) {
-//   .subtitle {
-//     margin: 0 27% !important;
-//   }
-//   .divider {
-//     margin: 0 20% !important;
-//   }
-// }
-
-// @media screen and (max-width: 1000px) {
-//   .subtitle {
-//     margin: 0 7% !important;
-//   }
-//   .divider {
-//     margin: 0 7% !important;
-//   }
-// }
+  .content-glow h2{
+    display: inline;
+    font-size: 2.1rem;
+    line-height: 40px;
+    margin: 0 3%;
+  }
