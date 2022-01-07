@@ -1,12 +1,15 @@
 <div class="container-glow" *ngIf="quiz">
-    <div class="card-glow b1">
+    <div class="card-glow b2">
         <span></span>
         <div class="content-glow">
             <div class="content-glow-title">
-                <h2 class="font-2">{{quiz.category}}</h2>
-            </div><button class="block-btn font-3"
-                style="border: 2px solid white; color: white; background-color: rgba(0, 0, 0, 0);">{{quiz.description}} {{quiz.description}} {{quiz.description}} {{quiz.description}} {{quiz.description}} {{quiz.description}} {{quiz.description}}</button><button class="btn big-btn font-2"
-                (click)="onClick()">Start</button>
+                <div class="neon-container">
+                    <div class="neon font-3 uppercase">{{quiz.category}}</div>
+                </div>
+            </div>
+            <div class="font-2 text">{{quiz.description}}</div>
+
+            <button class="btn big-btn font-2" (click)="onClick()">Start</button>
         </div>
     </div>
-</div> 
+</div>

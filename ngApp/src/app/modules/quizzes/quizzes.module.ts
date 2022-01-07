@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { QuizzesComponent } from './components/quizzes/quizzes.component';
-import { AddNewComponent } from './components/add-new/add-new.component';
 import { QuizzesRoutingModule } from './quizzes-routing.module';
 import { TranslateModule } from '@ngx-translate/core';
 import { SharedModule } from '../../shared/shared.module';
@@ -12,7 +11,6 @@ import { DetailsStartComponent } from './components/details-start/details-start.
 @NgModule({
   declarations: [
     QuizzesComponent,
-    AddNewComponent,
     DetailsComponent,
     DetailsScoreComponent,
     FilterPipe,
