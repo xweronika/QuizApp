@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription, map, switchMap } from 'rxjs';
-import { QuizService, QuizDetails } from '../../../../core/services/quiz.service';
+import { QuizService, Questions } from '../../../../core/services/quiz.service';
 
 @Component({
   selector: 'app-details',
@@ -9,7 +9,7 @@ import { QuizService, QuizDetails } from '../../../../core/services/quiz.service
   styleUrls: ['./details.component.scss']
 })
 export class DetailsComponent implements OnInit, OnDestroy {
-  public data!: QuizDetails;
+  public data: Array<Questions> = [];
   public activeIndex: number = 0;
   public selectedAnswer: string | null = null;
   private correctAnswer: string | null = null;
@@ -24,9 +24,9 @@ export class DetailsComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.subscribe = this.route.params.pipe(
       map(({ id }) => id),
-      switchMap((id: number) => this.quizService.getById(id)))
+      switchMap((id: number) => this.quizService.getQuestions(id)))
       .subscribe({
-        next: res => { this.data = res; },
+        next: res => { this.data = res },
         error: err => { console.log(err.error) }
       });
   }
@@ -43,8 +43,8 @@ export class DetailsComponent implements OnInit, OnDestroy {
   onNext(): void {
     this.selectedAnswer = null;
     this.correctAnswer = null;
-    if (this.data.details.length == this.activeIndex) {
-      this.quizService.saveScore(this.points, this.data.details.length, this.data.quiz.id);
+    if (this.data.length - 1 == this.activeIndex) {
+      this.quizService.saveScore(this.points, this.data.length, this.data[0].quiz_id);
       this.router.navigate(['quizzes/score']);
     } else this.activeIndex += 1
   }

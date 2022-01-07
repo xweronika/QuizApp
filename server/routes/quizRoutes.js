@@ -5,9 +5,10 @@ const router = express.Router();
 // @route GET && POST - /quiz/
 router
   .route("/")
-  .get(quizControllers.getAllQuizzes)
-  .post(quizControllers.addNewQuiz);
+  .get(quizControllers.getAll)
+  .post(quizControllers.addNew);
 
 router.route("/:id").get(quizControllers.getById);
+router.route("/:id/data").get(quizControllers.getQuestions);
 
 module.exports = router;

@@ -8,13 +8,15 @@ import { SharedModule } from '../../shared/shared.module';
 import { DetailsComponent } from './components/details/details.component';
 import { FilterPipe } from '../../shared/pipes/filter.pipe';
 import { DetailsScoreComponent } from './components/details-score/details-score.component';
+import { DetailsStartComponent } from './components/details-start/details-start.component';
 @NgModule({
   declarations: [
     QuizzesComponent,
     AddNewComponent,
     DetailsComponent,
     DetailsScoreComponent,
-    FilterPipe
+    FilterPipe,
+    DetailsStartComponent
   ],
   providers: [],
   imports: [

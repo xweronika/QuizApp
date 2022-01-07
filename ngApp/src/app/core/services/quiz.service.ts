@@ -9,16 +9,14 @@ export interface Quiz {
   language: string,
   created_at: Date
 }
-export interface QuizDetails {
-  quiz: Quiz,
-  details: Array<Answer>,
-}
-export interface Answer {
+export interface Questions {
   question: string,
   answers: Array<string>,
   correct: string,
-  index: number
+  index: number,
+  quiz_id: number
 }
+
 export interface Score {
   points: number,
   max: number,
@@ -37,8 +35,11 @@ export class QuizService {
   get() {
     return this.http.get<Quiz[]>(this.url);
   }
-  getById(id: number) {
-    return this.http.get<QuizDetails>(`${this.url}/${id}`);
+  getQuizById(id: number) {
+    return this.http.get<Quiz>(`${this.url}/${id}`);
+  }
+  getQuestions(id: number) {
+    return this.http.get<Questions[]>(`${this.url}/${id}/data`);
   }
   saveScore(points: number, max: number, id: number) {
     this.score = { points: points, max: max, quiz_id: id };
