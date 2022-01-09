@@ -144,3 +144,14 @@
   background-color: white;
   color: black;
 }
+
+
+// GLOW BOX FORMS
+.container-form {
+  max-width: 700px;
+  box-shadow: 1px 1px 40px 10px #ff0058;
+  border-radius: 35px 0;
+  background: linear-gradient(45deg, #ffcc00 0%, #ff0058 100%);
+  padding: 40px;  
+  margin: 70px auto 100px;
+}
