@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AddNewComponent } from './components/add-new/add-new.component';
 import { AddNewRoutingModule } from './add-new-routing.module';
+import { SharedModule } from '../../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -9,7 +10,8 @@ import { AddNewRoutingModule } from './add-new-routing.module';
   ],
   imports: [
     CommonModule,
-    AddNewRoutingModule
+    AddNewRoutingModule,
+    SharedModule
   ]
 })
 export class AddNewModule { }
