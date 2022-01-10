@@ -3,7 +3,7 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateLoader } from '@ngx-translate/core';
 import { MaterialModule } from '../../assets/material/material.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http);
@@ -22,6 +22,7 @@ export const transLoader = {
         HttpClientModule,
         MaterialModule,
         FormsModule,
+        ReactiveFormsModule
     ],
 
 })
