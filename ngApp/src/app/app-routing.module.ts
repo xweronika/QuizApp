@@ -11,10 +11,6 @@ const routes: Routes = [
     path: 'quizzes',
     loadChildren: () => import('./modules/quizzes/quizzes.module').then(m => m.QuizesModule)
   },
-  {
-    path: 'add',
-    loadChildren: () => import('./modules/add-new/add-new.module').then(m => m.AddNewModule)
-  },
 ];
 
 @NgModule({

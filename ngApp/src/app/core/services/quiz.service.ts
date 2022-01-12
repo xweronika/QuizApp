@@ -1,27 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment';
+import { Quiz } from '../interfaces/quiz';
+import { Score } from '../interfaces/score';
+import { Details } from '../interfaces/details';
 
-export interface Quiz {
-  id: number,
-  category: string,
-  description: string,
-  language: string,
-  created_at: Date
-}
-export interface Questions {
-  question: string,
-  answers: Array<string>,
-  correct: string,
-  index: number,
-  quiz_id: number
-}
+export { Quiz } from '../interfaces/quiz';
+export { Score } from '../interfaces/score';
+export { Details } from '../interfaces/details';
 
-export interface Score {
-  points: number,
-  max: number,
-  quiz_id: number,
-}
 @Injectable({
   providedIn: 'root'
 })
@@ -39,13 +26,12 @@ export class QuizService {
     return this.http.get<Quiz>(`${this.url}/${id}`);
   }
   getQuestions(id: number) {
-    return this.http.get<Questions[]>(`${this.url}/${id}/data`);
+    return this.http.get<Details[]>(`${this.url}/${id}/data`);
   }
   saveScore(points: number, max: number, id: number) {
     this.score = { points: points, max: max, quiz_id: id };
   }
   getScore() {
-    if (!this.score) return '';
-    return `${this.score.points} / ${this.score.max}` || '';
+    return this.score ? `${this.score.points} / ${this.score.max}` : '';
   }
 }

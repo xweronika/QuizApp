@@ -1,0 +1,25 @@
+<form [formGroup]="form">
+   <div class="container-form">
+      <input formControlName="category" class="question font-2" placeholder="Category" type="text">
+      <textarea formControlName="description" class="question font-2" placeholder="Description" type="text"></textarea>
+   </div>
+
+   <div class="container-form" formArrayName="details"
+      *ngFor="let detail of form.controls['details']?.value; let i = index;  trackBy:trackByFn">
+      <ng-container [formGroupName]="i">
+         <input class="question font-2" placeholder="Question" type="text" formControlName="question">
+         <div class="buttons" *ngFor="let answer of detail.answers; let j = index;  trackBy:trackByFn">
+               <input type="radio" class="radio" [id]="numToStr(j, i)" name="answer" (change)="radioChange(i, j)" >
+               <label [for]="numToStr(j, i)" formGroupName="answers" name="answer">   
+                  <input class="font-2" [placeholder]="'Answer '+(j+1)" [formControlName]="j" type="text">
+                 </label>
+         </div>
+      </ng-container>
+   </div>
+</form>
+
+<div class="container-btn">
+   <button class="btn font-2" (click)="addQuestion()">More</button>
+   <button class="btn font-2" (click)="removeQuestion()">Less</button>
+   <button class="btn font-2" (click)="onSubmit()">Submit</button>
+</div><br><br>

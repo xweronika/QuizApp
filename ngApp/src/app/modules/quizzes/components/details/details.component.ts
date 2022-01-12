@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription, map, switchMap } from 'rxjs';
-import { QuizService, Questions } from '../../../../core/services/quiz.service';
+import { QuizService, Details } from '../../../../core/services/quiz.service';
 
 @Component({
   selector: 'app-details',
@@ -9,7 +9,7 @@ import { QuizService, Questions } from '../../../../core/services/quiz.service';
   styleUrls: ['./details.component.scss']
 })
 export class DetailsComponent implements OnInit, OnDestroy {
-  public data: Array<Questions> = [];
+  public data: Array<Details> = [];
   public activeIndex: number = 0;
   public selectedAnswer: string | null = null;
   private correctAnswer: string | null = null;

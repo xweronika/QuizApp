@@ -1,21 +1,3 @@
-<!-- <div class="body">
-    <div class="container">
-        <div class="card" *ngFor="let quiz of quizzes">
-            <div class="face face1">
-                <div class="content-btn">
-                    <span class="stars"></span>
-                    <p class="text font-2">{{quiz.description}}</p>
-                    <button class="glow-on-hover" type="button" [routerLink]="quiz.id.toString()">
-                        {{'OPEN' | translate }}</button><br>
-                    <button class="glow-on-hover" type="button">{{'QUIZZES.SHARE' | translate }}</button>
-                </div>
-            </div>
-            <div class="face face2">
-                <h2 class="font-2">{{quiz.title | translate}}</h2>
-            </div>
-        </div>
-    </div>
-</div> -->
 <div class="body">
     <div class="container">
         <div class="box" *ngFor="let quiz of quizzes" [routerLink]="quiz.id.toString()">
@@ -27,8 +9,5 @@
                 </p>
             </div>
         </div>
-
-
-
     </div>
 </div>
