@@ -1,10 +1,20 @@
+.body-form{
+
+  margin: 0 auto;
+}
+
 .container-form {
-  max-width: 700px;
+  min-width: 800px;
   box-shadow: 1px 1px 40px 10px #ff0058;
   border-radius: 35px 0;
   background: linear-gradient(45deg, #ffcc00 0%, #ff0058 100%);
-  padding: 40px;  
-  margin: 70px auto 100px;
+  padding: 50px;  
+}
+@media all and (max-width: 1200px) {
+  .container-form {
+    min-width: 150px;
+    padding: 40px;
+  }
 }
 
 .buttons{
@@ -71,5 +81,14 @@ input:focus {
 
 .container-btn {
   display: table;
-  margin: -30px auto 0;
+  margin: 10px auto;
+  text-align: center;
+}
+
+button:disabled{
+cursor: default;
+}
+
+.valid.m{
+  margin: -10px 10px 10px;
 }

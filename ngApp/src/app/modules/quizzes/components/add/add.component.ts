@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
+import { FormGroup, FormBuilder, FormArray, Validators, FormControl, ValidationErrors } from '@angular/forms';
+import { Details } from '../../../../core/interfaces/details'
 
 @Component({
   selector: 'app-add',
@@ -8,11 +9,21 @@ import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
 })
 export class AddComponent implements OnInit {
   public form: FormGroup;
+  public category = new FormControl('', [
+    Validators.required,
+    Validators.minLength(2),
+    Validators.maxLength(50)
+  ]);
+  public description = new FormControl('', [
+    Validators.required,
+    Validators.minLength(5),
+    Validators.maxLength(50)
+  ]);
 
   constructor(private fb: FormBuilder) {
     this.form = this.fb.group({
-      category: this.fb.control(''),
-      description: this.fb.control(''),
+      category: this.category,
+      description: this.description,
       details: this.fb.array([])
     });
     this.addQuestion();
@@ -36,7 +47,7 @@ export class AddComponent implements OnInit {
 
   removeQuestion() {
     const details = this.form.controls['details'] as FormArray;
-    if (details.length > 1) details.removeAt(details.length - 1);
+    details.removeAt(details.length - 1);
   }
 
   trackByFn(index: number) {
@@ -52,8 +63,17 @@ export class AddComponent implements OnInit {
   }
 
   setCorrect() {
-    this.form.controls['details'].value.forEach((el: { correct: string | number; answers: any; }) => {
-      el.correct = el.answers[el.correct]
+    this.form.controls['details'].value.forEach((el: Details) => {
+      el.correct = el.answers[parseInt(el.correct)];
     });
   }
+  getError(value: FormControl | FormArray, name: string, min?: number, max?: number) {
+    if (value.hasError('required')) return `${name} is required.`;
+    else if (value.hasError('minlength')) return `${name} can not be shorter than ${min || 5} characters.`;
+    else if (value.hasError('maxlength')) return `${name} can not be longer than ${max || 25} characters.`;
+    return "";
+  }
+
+
+
 }

@@ -22,7 +22,7 @@
   flex-wrap: wrap;
   min-height: 90vh;
 }
-@media screen and (max-width: 1000px) {
+@media all and (max-width: 1000px) {
   .container-glow {
     margin-top: 30px;
   }
@@ -84,7 +84,7 @@
   vertical-align:middle;
   text-align: center;
 }
-@media screen and (max-width: 500px) {
+@media all and (max-width: 500px) {
   .content-glow-title{
     display: block;
     margin: 15px 10%;
@@ -140,7 +140,7 @@
   min-width: 200px !important;
   cursor: pointer;
 }
-.btn:hover{
+.btn:hover:enabled{
   background-color: white;
   color: black;
 }
@@ -154,4 +154,11 @@
   background: linear-gradient(45deg, #ffcc00 0%, #ff0058 100%);
   padding: 40px;  
   margin: 70px auto 100px;
+}
+
+
+// VALIDATION ERROR
+.valid {
+  @extend .font-2;
+  color: #ff0058;
 }
