@@ -10,7 +10,7 @@ app.use(cors());
 app.use(express.json()); // parse json bodies in the request object
 
 // Redirect requests to endpoint starting with /quiz to quizRoutes.js
-app.use("/quiz", require("./routes/quizRoutes"));
+app.use("/quiz", require("./src/routes/quizRoutes"));
 
 // Global Error Handler. IMPORTANT function params MUST start with err
 app.use((err, req, res, next) => {
