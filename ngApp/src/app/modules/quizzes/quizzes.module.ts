@@ -8,7 +8,7 @@ import { DetailsComponent } from './components/details/details.component';
 import { FilterPipe } from '../../core/pipes/filter.pipe';
 import { DetailsScoreComponent } from './components/details-score/details-score.component';
 import { DetailsStartComponent } from './components/details-start/details-start.component';
-import { AddNewComponent } from './components/add-new/add-new.component';
+import { AddComponent } from './components/add/add.component';
 
 
 @NgModule({
@@ -16,7 +16,7 @@ import { AddNewComponent } from './components/add-new/add-new.component';
     QuizzesComponent,
     DetailsComponent,
     DetailsScoreComponent,
-    AddNewComponent,
+    AddComponent,
     FilterPipe,
     DetailsStartComponent
   ],

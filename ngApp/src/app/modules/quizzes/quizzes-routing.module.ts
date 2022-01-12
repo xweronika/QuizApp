@@ -4,7 +4,7 @@ import { QuizzesComponent } from './components/quizzes/quizzes.component'
 import { DetailsComponent } from './components/details/details.component';
 import { DetailsScoreComponent } from './components/details-score/details-score.component';
 import { DetailsStartComponent } from './components/details-start/details-start.component';
-import { AddNewComponent } from './components/add-new/add-new.component';
+import { AddComponent } from './components/add/add.component';
 
 const routes: Routes = [
   {
@@ -13,7 +13,7 @@ const routes: Routes = [
   },
   {
     path: 'add',
-    component: AddNewComponent
+    component: AddComponent
   },
   {
     path: 'score',

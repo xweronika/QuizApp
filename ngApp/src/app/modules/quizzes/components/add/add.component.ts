@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
 
 @Component({
-  selector: 'app-add-new',
-  templateUrl: './add-new.component.html',
-  styleUrls: ['./add-new.component.scss']
+  selector: 'app-add',
+  templateUrl: './add.component.html',
+  styleUrls: ['./add.component.scss']
 })
-export class AddNewComponent implements OnInit {
+export class AddComponent implements OnInit {
   public form: FormGroup;
 
   constructor(private fb: FormBuilder) {
