@@ -1,8 +1,8 @@
 <form [formGroup]="form" class="body-form" (ngSubmit)="onSubmit()">
    <div class="container-form">
       <input [formControl]="category" formControlName="category" class="question font-2" placeholder="Category">
-      <div [hidden]="category.valid || category.untouched" class="valid m"> {{getError(category, 'Category', 2)}} </div>
-
+      <div [hidden]="category.valid || category.untouched" class="valid m"> {{getError(category, 'Category', 2, 50)}}
+      </div>
       <textarea [formControl]="description" formControlName="description" class="question font-2"
          placeholder="Description"></textarea>
       <div [hidden]="description.valid || description.untouched" class="valid">
@@ -12,13 +12,18 @@
    <div class="container-form" formArrayName="details"
       *ngFor="let detail of form.controls['details']?.value; let i = index;  trackBy:trackByFn">
       <ng-container [formGroupName]="i">
-
-         <input class="question font-2" placeholder="Question" formControlName="question">
-         <div class="buttons" *ngFor="let answer of detail.answers; let j = index;  trackBy:trackByFn">
-            <input type="radio" class="radio" [id]="numToStr(j, i)" name="answer" (change)="radioChange(i, j)">
-            <label [for]="numToStr(j, i)" formGroupName="answers" name="answer">
-               <input class="font-2" [placeholder]="'Answer '+(j+1)" [formControlName]="j">
+         <input class="question font-2" placeholder="Question" formControlName="question" [formControl]="question[i]">
+         <div [hidden]="question[i].valid || question[i].untouched" class="valid m"> {{getError(question[i],
+            'Question', 10, 70)}} </div>
+         <div class="buttons" *ngFor="let data of detail.answers; let j = index;  trackBy:trackByFn">
+            <input type="radio" class="radio" [id]="j+i*4" [name]="i" (change)="radioChange(i, j)" [checked]="!j">
+            <label [for]="j+i*4" formGroupName="answers">
+               <input class="font-2" [placeholder]="'Answer '+(j+1)" [formControlName]="j"
+                  [formControl]="answer[j+i*4]">
             </label>
+            <div [hidden]="answer[j+i*4].valid || answer[j+i*4].untouched" class="valid m2"> {{getError(answer[j+i*4],
+               'Answer '+ (j+1), 1, 50)}}
+            </div>
          </div>
       </ng-container>
    </div>

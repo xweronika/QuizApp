@@ -86,9 +86,16 @@ input:focus {
 }
 
 button:disabled{
-cursor: default;
+cursor: not-allowed;
 }
 
-.valid.m{
+.valid {
+  margin-left:10px;
+}
+.valid.m {
   margin: -10px 10px 10px;
 }
+.valid.m2 {
+  margin: 10px 10px 10px 50px;
+}
+
