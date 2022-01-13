@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormArray, Validators, FormControl } from '@angular/forms';
-import { Details } from '../../../../core/interfaces/details'
+import { Details, QuizService } from '../../../../core/services/quiz.service'
 
 @Component({
   selector: 'app-add',
@@ -14,7 +14,7 @@ export class AddComponent implements OnInit {
   public question = Array.from({ length: 20 }, () => this.newForm(10, 70));
   public answer = Array.from({ length: 20 }, () => this.newForm(1, 50));
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private quizService: QuizService) {
     this.form = this.fb.group({
       category: this.category,
       description: this.description,
@@ -29,8 +29,7 @@ export class AddComponent implements OnInit {
     this.form.controls['details'].value.forEach((el: Details) => {
       el.correct = el.answers[parseInt(el.correct)];
     });
-    console.log(this.form.controls['details'] as FormArray)
-    console.log(this.form)
+    this.quizService.addQuiz(this.form.value);
   }
 
   addQuestion() {

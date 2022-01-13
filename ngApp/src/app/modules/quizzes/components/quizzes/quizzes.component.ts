@@ -9,7 +9,7 @@ import { QuizService, Quiz } from '../../../../core/services/quiz.service';
 export class QuizzesComponent implements OnInit {
   public quizzes: Array<Quiz> = [];
   
-  constructor(public quizService: QuizService,) { }
+  constructor(public quizService: QuizService) { }
 
   ngOnInit(): void {
     this.quizService.get()

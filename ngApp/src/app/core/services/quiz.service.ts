@@ -1,18 +1,16 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment';
-import { Quiz } from '../interfaces/quiz';
+import { Quiz, NewQuiz } from '../interfaces/quiz';
 import { Score } from '../interfaces/score';
 import { Details } from '../interfaces/details';
 
 export { Quiz } from '../interfaces/quiz';
-export { Score } from '../interfaces/score';
 export { Details } from '../interfaces/details';
 
 @Injectable({
   providedIn: 'root'
 })
-
 export class QuizService {
   private url: string = `${environment.apiURL}/quiz`;
   public score!: Score;
@@ -33,5 +31,9 @@ export class QuizService {
   }
   getScore() {
     return this.score ? `${this.score.points} / ${this.score.max}` : '';
+  }
+
+  addQuiz(newQuiz: NewQuiz) {
+    return this.http.post<number>(this.url, newQuiz);
   }
 }
