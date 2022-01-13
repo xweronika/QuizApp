@@ -14,7 +14,7 @@ export class QuizzesComponent implements OnInit {
   ngOnInit(): void {
     this.quizService.get()
       .subscribe({
-        next: res => { this.quizzes = [...res, ...res, ...res] },
+        next: res => { this.quizzes = res },
         error: err => { console.log(err.error) }
       });
   }

@@ -1,25 +1,25 @@
 const db = require("../config/db");
 
 class Quiz {
-  constructor(title, body) {
-    this.title = title;
-    this.body = body;
+  constructor(category, description) {
+    this.category = category;
+    this.description = description;
   }
 
-  // save() {
-  //   let sql = `
-  //   INSERT INTO quizzes(
-  //     title,
-  //     body,
-  //     created_at
-  //   )
-  //   VALUES(
-  //     '${this.title}',
-  //     '${this.body}',
-  //     '${createdAtDate}'
-  //   )`;
-  //   return db.execute(sql);
-  // }
+  save() {
+    let sql = `
+    INSERT INTO quizzes(
+      category,
+      description,
+      created_at
+    )
+    VALUES(
+      '${this.category}',
+      '${this.description}',
+      now()
+    )`;
+    return db.execute(sql);
+  }
 
   static findAll() {
     let sql = `select * from quizzes;`;

@@ -1,7 +1,7 @@
 const Quiz = require("../models/Quiz");
 const Question = require("../models/Question");
 
-exports.getAll = async (req, res, next) => {
+exports.get = async (req, res, next) => {
   try {
     const [quizzes] = await Quiz.findAll();
     res.status(200).json(quizzes);
@@ -29,14 +29,22 @@ exports.getQuestions = async (req, res, next) => {
   }
 };
 
-exports.addNew = async (req, res, next) => {
+exports.add = async (req, res, next) => {
   try {
-    let { title, body } = req.body;
-    let quiz = new Quiz(title, body);
+    let { category, description } = req.body;
+    let quiz = new Quiz(category, description);
     quiz = await quiz.save();
-    res.status(201).json({ message: "Quiz created" });
+    const id = quiz[0].insertId;
+
+    for (const data of req.body.details) {
+      let { question, answers, correct } = data;
+      let details = new Question(id, question, answers, correct);
+      details = await details.save();
+    }
+    res.status(201).json(id);
   } catch (error) {
     next(error);
   }
 };
+
 

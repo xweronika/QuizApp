@@ -32,8 +32,8 @@ export class QuizService {
   getScore() {
     return this.score ? `${this.score.points} / ${this.score.max}` : '';
   }
-
   addQuiz(newQuiz: NewQuiz) {
+    console.log(newQuiz)
     return this.http.post<number>(this.url, newQuiz);
   }
 }
