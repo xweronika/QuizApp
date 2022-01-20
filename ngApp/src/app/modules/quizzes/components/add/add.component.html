@@ -31,8 +31,8 @@
    <div class="container-btn">
       <button class="btn font-2" (click)="addQuestion()" [disabled]="form.controls['details'].value.length==20"
          type="button">More</button>
-      <button class="btn font-2" (click)="removeQuestion()" [disabled]="!form.valid"
-         [disabled]="form.controls['details'].value.length==1" type="button">Less</button>
-      <button class="btn font-2" type="submit">Submit</button>
+      <button class="btn font-2" (click)="removeQuestion()" [disabled]="form.controls['details'].value.length==1"
+         type="button">Less</button>
+      <button class="btn font-2" type="submit" [disabled]="!form.valid">Submit</button>
    </div><br><br>
 </form>

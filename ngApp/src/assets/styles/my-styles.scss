@@ -155,10 +155,14 @@
   padding: 40px;  
   margin: 70px auto 100px;
 }
+.world-break {
+  word-break: break-all; 
+}
 
 
 // VALIDATION ERROR
 .valid {
   @extend .font-2;
-  color: #ff0058;
+  color: #ff0059;
+  font-size: 16px;
 }

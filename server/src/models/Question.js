@@ -9,7 +9,6 @@ class Question {
   }
 
   save() {
-
     let sql = `
     INSERT INTO questions(
       quiz_id,

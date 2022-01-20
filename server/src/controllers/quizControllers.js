@@ -1,6 +1,7 @@
 const Quiz = require("../models/Quiz");
 const Question = require("../models/Question");
 
+
 exports.get = async (req, res, next) => {
   try {
     const [quizzes] = await Quiz.findAll();

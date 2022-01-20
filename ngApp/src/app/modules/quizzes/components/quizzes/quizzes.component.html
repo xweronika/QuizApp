@@ -2,10 +2,11 @@
     <div class="container">
         <div class="box" *ngFor="let quiz of quizzes" [routerLink]="quiz.id.toString()">
             <span></span>
-            <div class="content">
+            <div class="content" style="
+                word-break: break-all;">
                 <h2 class="font-2">{{quiz.category | translate}}</h2>
-                <p class="font-2">
-                    {{quiz.description}}{{quiz.description}}{{quiz.description}}{{quiz.description}}{{quiz.description}}{{quiz.description}}
+                <p class="font-2 world-break">
+                    {{quiz.description}}
                 </p>
             </div>
         </div>

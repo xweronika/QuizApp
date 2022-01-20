@@ -31,21 +31,20 @@ export class AddComponent implements OnInit {
       el.correct = el.answers[parseInt(el.correct)];
     });
     this.quizService.addQuiz(this.form.value)
-    .subscribe({
-      next: res => {  this.router.navigate([`/quizzes/${res}`]); },
-      error: err => { console.log(err.error) }
-    });
+      .subscribe({
+        next: res => { this.router.navigate([`/quizzes/${res}`]); },
+        error: err => { console.log(err.error) }
+      });
   }
 
   addQuestion() {
- 
     const details = this.form.controls['details'] as FormArray;
     const answers = this.answer.slice(details.length * 4, details.length * 4 + 4)
     if (details.length < 20) details.push(this.fb.group({
       question: this.question[details.length],
       correct: 0,
       answers: this.fb.array(answers),
-    })); 
+    }));
   }
 
   removeQuestion() {
