@@ -8,15 +8,12 @@ import { DetailsComponent } from './components/details/details.component';
 import { FilterPipe } from '../../core/pipes/filter.pipe';
 import { DetailsScoreComponent } from './components/details-score/details-score.component';
 import { DetailsStartComponent } from './components/details-start/details-start.component';
-import { AddComponent } from './components/add/add.component';
-
 
 @NgModule({
   declarations: [
     QuizzesComponent,
     DetailsComponent,
     DetailsScoreComponent,
-    AddComponent,
     FilterPipe,
     DetailsStartComponent
   ],

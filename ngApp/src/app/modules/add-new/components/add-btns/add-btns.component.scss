@@ -1,0 +1,9 @@
+.container-btn {
+    display: table;
+    margin: 10px auto;
+    text-align: center;
+  }
+
+  button:disabled{
+    cursor: not-allowed;
+}

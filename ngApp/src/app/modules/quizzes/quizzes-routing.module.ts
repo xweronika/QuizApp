@@ -4,16 +4,11 @@ import { QuizzesComponent } from './components/quizzes/quizzes.component'
 import { DetailsComponent } from './components/details/details.component';
 import { DetailsScoreComponent } from './components/details-score/details-score.component';
 import { DetailsStartComponent } from './components/details-start/details-start.component';
-import { AddComponent } from './components/add/add.component';
 
 const routes: Routes = [
   {
     path: '',
     component: QuizzesComponent
-  },
-  {
-    path: 'add',
-    component: AddComponent
   },
   {
     path: 'score',

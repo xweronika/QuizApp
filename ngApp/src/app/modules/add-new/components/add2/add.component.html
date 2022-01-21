@@ -1,4 +1,4 @@
-<form [formGroup]="form" class="body-form" (ngSubmit)="onSubmit()">
+<!-- <form [formGroup]="form" class="body-form">
    <div class="container-form">
       <input [formControl]="category" formControlName="category" class="question font-2" placeholder="Category">
       <div [hidden]="category.valid || category.untouched" class="valid m"> {{getError(category, 'Category', 2, 50)}}
@@ -29,10 +29,10 @@
    </div>
 
    <div class="container-btn">
-      <button class="btn font-2" (click)="addQuestion()" [disabled]="form.controls['details'].value.length==20"
-         type="button">More</button>
-      <button class="btn font-2" (click)="removeQuestion()" [disabled]="form.controls['details'].value.length==1"
-         type="button">Less</button>
-      <button class="btn font-2" type="submit" [disabled]="!form.valid">Submit</button>
+      <button class="btn font-2" (click)="addQuestion()"
+         [disabled]="form.controls['details'].value.length==20">More</button>
+      <button class="btn font-2" (click)="removeQuestion()"
+         [disabled]="form.controls['details'].value.length==1">Less</button>
+      <button class="btn font-2" (click)="onSubmit()" [disabled]="!form.valid">Submit</button>
    </div><br><br>
-</form>
+</form> -->

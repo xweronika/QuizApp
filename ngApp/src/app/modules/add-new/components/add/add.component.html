@@ -1,0 +1,14 @@
+<app-add-desc (update)="updateQuiz($event)"></app-add-desc>
+
+<div class="container-form" *ngFor="let detail of details; let i = index">
+   <input class="m font-2" placeholder="Question">
+   <mat-radio-group>
+      <div class="radio" *ngFor="let detail of detail.answers; let j = index">
+         <mat-radio-button [checked]="!j" [value]="j" style="display: inline-block;"> </mat-radio-button>
+         <input class="font-2" [placeholder]="'Answer '+(j+1)">
+      </div>
+   </mat-radio-group>
+</div>
+
+<app-add-btns (add)="add()" (less)="less()" (submit)="submit()" [quiz]="quiz" [details]="details">
+</app-add-btns>

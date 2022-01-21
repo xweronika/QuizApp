@@ -1,0 +1,5 @@
+<div class="container-btn">
+    <button [disabled]="addDisabled()" class="btn font-2" (click)="add.emit()">More</button>
+    <button [disabled]="lessDisabled()" class="btn font-2" (click)="less.emit()">Less</button>
+    <button [disabled]="submitDisabled()" class="btn font-2" (click)="submit.emit()">Submit</button>
+</div><br><br>
