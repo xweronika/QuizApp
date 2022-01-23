@@ -4,5 +4,5 @@
 
   <textarea class="font-2" formControlName="description" placeholder="Description"
     (input)="update.emit(quiz)"></textarea>
-  <div class="valid" *ngIf="isTouched('description')">{{ getError('description')}}</div>
+  <div class="valid m" *ngIf="isTouched('description')">{{ getError('description')}}</div>
 </div>

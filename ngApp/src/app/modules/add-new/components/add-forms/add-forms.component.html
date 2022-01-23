@@ -1,0 +1,13 @@
+<form [formGroup]="form">
+    <div class="container-form" *ngFor="let detail of form.controls['details']?.value; let i = index; trackBy:trackByFn"
+        formArrayName="details">
+        <mat-radio-group [formGroupName]="i">
+            <input (input)="emit()" class="font-2 m" placeholder="Question" formControlName="question">
+            <div class="radio" *ngFor="let answer of detail.answers; let j = index; trackBy:trackByFn"
+                formGroupName="answers">
+                <mat-radio-button (change)="radioChange(i, j)" [checked]="!j" [value]="j"></mat-radio-button>
+                <input [formControlName]="j" (input)="emit()" class="font-2" [placeholder]="'Answer '+(j+1)">
+            </div>
+        </mat-radio-group>
+    </div>
+</form>

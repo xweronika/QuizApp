@@ -1,36 +1,33 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { FormArray, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NewQuiz } from 'src/app/core/interfaces/quiz';
 import { Details, QuizService } from '../../../../core/services/quiz.service'
+import { AddFormsComponent } from '../add-forms/add-forms.component';
 
 @Component({
   selector: 'app-add',
   templateUrl: './add.component.html',
-  styleUrls: ['./add.component.scss']
+  styleUrls: ['./add.component.scss'],
 })
 export class AddComponent implements OnInit {
+  @ViewChild(AddFormsComponent) forms: AddFormsComponent = {} as AddFormsComponent;
 
   public quiz: any = [];
   public details: any = []
 
   constructor() { }
-  ngOnInit(): void { }
 
-  add() {
-    this.details.push({
-      answers: ['', '', '', ''],
-      question: '',
-      correct: ''
-    })
-  }
+  ngOnInit(): void {
 
-  less() {
-    this.details.pop();
   }
 
   updateQuiz(quiz: FormGroup) {
     this.quiz = quiz;
+  }
+  updateDetails(details: FormArray) {
+    console.log(details)
+    this.details = details;
   }
 
   submit() {
@@ -42,6 +39,5 @@ export class AddComponent implements OnInit {
     //   });
   }
   // radioChange(i: number, j: number) { }
-
 
 }

@@ -24,9 +24,9 @@ export class AddDescComponent implements OnInit {
     const min = control.errors!['minlength']?.requiredLength | 0;
     if (control.hasError('required'))
       return `${name} is required.`;
-    if (control.hasError('minlength'))
+    else if (control.hasError('minlength'))
       return `${name} can not be shorter than ${min} characters.`;
-    if (control.hasError('maxlength'))
+    else if (control.hasError('maxlength'))
       return `${name} can not be shorter than ${max} characters.`;
     else return ""
   }
