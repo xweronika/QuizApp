@@ -13,5 +13,5 @@ export interface NewQuiz {
     question: string,
     answers: Array<string>,
     correct: string
-  }] | []
+  }]
 }

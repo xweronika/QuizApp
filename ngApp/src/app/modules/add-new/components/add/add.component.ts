@@ -10,13 +10,11 @@ import { AddFormsComponent } from '../add-forms/add-forms.component';
   templateUrl: './add.component.html',
   styleUrls: ['./add.component.scss'],
 })
-export class AddComponent{
+export class AddComponent {
   @ViewChild(AddFormsComponent) forms: AddFormsComponent = {} as AddFormsComponent;
 
-  public quiz: any = [];
-  public details: any = [];
-
-
+  public quiz: object = {};
+  public details: object = {};
 
   updateQuiz(quiz: FormGroup) {
     this.quiz = quiz;
@@ -24,8 +22,6 @@ export class AddComponent{
   updateDetails(details: FormArray) {
     this.details = details;
   }
-
-
 
   submit() {
 
@@ -35,6 +31,4 @@ export class AddComponent{
     //     error: err => { console.log(err.error) }
     //   });
   }
-  // radioChange(i: number, j: number) { }
-
 }

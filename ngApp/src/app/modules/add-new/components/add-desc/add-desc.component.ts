@@ -12,8 +12,8 @@ export class AddDescComponent {
 
   constructor(private fb: FormBuilder, private validService: ValidService) {
     this.quiz = fb.group({
-      category: ['', [Validators.required, Validators.minLength(9), Validators.maxLength(10)]],
-      description: ['', [Validators.required, Validators.minLength(9), Validators.maxLength(10)]],
+      category: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(50)]],
+      description: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(100)]],
     });
   }
 

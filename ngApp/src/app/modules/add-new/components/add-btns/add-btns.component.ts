@@ -22,6 +22,6 @@ export class AddBtnsComponent {
     return this.details.value?.length < 2 ? true : false;
   }
   submitDisabled(): boolean {
-    return !this.quiz.valid || !this.details.valid;
+    return !this.quiz.valid || !this.details.valid ? true : false;
   }
 }

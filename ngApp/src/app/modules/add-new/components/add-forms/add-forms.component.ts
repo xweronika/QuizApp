@@ -33,10 +33,10 @@ export class AddFormsComponent {
   add(): void {
     const details = this.form.controls['details'] as FormArray;
     const answers = Array.from({ length: 4 }, () =>
-      this.fb.control('', [Validators.required, Validators.minLength(9), Validators.maxLength(10)]));
+      this.fb.control('', [Validators.required, Validators.minLength(1), Validators.maxLength(50)]));
     details.push(this.fb.group({
-      question: this.fb.control('', [Validators.required, Validators.minLength(9), Validators.maxLength(10)]),
-      correct: this.fb.control(0, Validators.required),
+      question: this.fb.control('', [Validators.required, Validators.minLength(10), Validators.maxLength(70)]),
+      correct: this.fb.control(0),
       answers: this.fb.array(answers),
     }));
     this.emit();
@@ -60,6 +60,7 @@ export class AddFormsComponent {
   }
 
   emit(): void {
+    console.log(this.form.controls['details'])
     this.update.emit(this.form.controls['details'] as FormArray);
   }
 }
