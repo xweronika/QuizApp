@@ -1,7 +1,7 @@
 export interface Details {
     question: string,
     answers: Array<string>,
-    correct: string,
+    correct: number,
     index: number,
     quiz_id: number
   }

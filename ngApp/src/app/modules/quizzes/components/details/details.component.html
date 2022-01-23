@@ -4,11 +4,11 @@
         <div class="content-glow">{{activeIndex+1}} / {{data.length}}<br>
             <div class="content-glow-title">
                 <h2 class="font-2  world-break">{{detail.question}}</h2><br>
-                <mat-icon *ngIf="selectedAnswer" class="icon" (click)="onNext()">arrow_forward</mat-icon>
+                <mat-icon *ngIf="isAnswer()" class="icon" (click)="onNext()">arrow_forward</mat-icon>
             </div>
-            <div *ngFor="let answer of detail.answers"><button
-                    [ngClass]="{'b-green': checkCorrect(answer), 'b-red': checkWrong(answer), 'btn-hover': !selectedAnswer}"
-                    (click)="onClick(answer,detail.correct) " class="block-btn font-2  world-break">{{answer}}</button>
+            <div *ngFor="let answer of detail.answers; let i = index"><button
+                    [ngClass]="{'b-green': checkCorrect(i), 'b-red': checkWrong(i), 'btn-hover': !selectedAnswer}"
+                    (click)="onClick(i, detail.correct) " class="block-btn font-2  world-break">{{answer}}</button>
             </div>
         </div>
     </div>

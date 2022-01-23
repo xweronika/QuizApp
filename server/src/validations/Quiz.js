@@ -35,8 +35,8 @@ exports.validator = async (req, res, next) => {
     // Correct answer
     await check('details.*.correct', "Correct answers is required.")
     await check('details.*.correct')
-        .isLength({ min: 1, max: 50 })
-        .withMessage('Correct answer must be the same as one of the answers.').run(req)
+        .isNumeric({ min: 0, max: 3 })
+        .withMessage('Correct answer must be the number of one of the answers.').run(req)
 
 
     if (!validationResult(req).isEmpty()) {

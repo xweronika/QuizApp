@@ -6,5 +6,5 @@ module.exports = {
         add_default BOOL DEFAULT 0,
         created_at DATE  NOT NULL,
         PRIMARY KEY (id) );`,
-"down": "DROP TABLE quizzes"
+"down": "DROP TABLE IF EXISTS questions, quizzes, mysql_migrations_347ertt3e;"
 }

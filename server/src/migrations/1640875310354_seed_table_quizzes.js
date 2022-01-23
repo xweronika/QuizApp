@@ -4,5 +4,5 @@ module.exports = {
      ("Quiz What I like", "Lorem ipsum tekst", 1, now()),
      ("Quiz What I like", "Lorem ipsum tekst", 1, now()),
      ("Quiz What I like", "Lorem ipsum tekst", 1, now());`,
-    "down": "DROP TABLE quizzes"
+    "down": "DROP TABLE IF EXISTS questions, quizzes, mysql_migrations_347ertt3e;"
 }

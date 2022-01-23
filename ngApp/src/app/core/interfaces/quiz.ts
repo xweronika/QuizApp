@@ -12,6 +12,6 @@ export interface NewQuiz {
   details: [{
     question: string,
     answers: Array<string>,
-    correct: string
+    correct: number
   }]
 }
