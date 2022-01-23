@@ -33,7 +33,7 @@ export class DetailsComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.subscribe.unsubscribe();
   }
-  onClick(answer: string, correct: string): Boolean {
+  onClick(answer: string, correct: string): boolean {
     if (this.selectedAnswer) return false;
     if (answer == correct) this.points += 1;
     this.selectedAnswer = answer;
@@ -48,11 +48,11 @@ export class DetailsComponent implements OnInit, OnDestroy {
       this.router.navigate(['quizzes/score']);
     } else this.activeIndex += 1
   }
-  checkCorrect(current: string): Boolean {
+  checkCorrect(current: string): boolean {
     if (!this.selectedAnswer) return false;
     return current == this.correctAnswer ? true : false;
   }
-  checkWrong(current: string): Boolean {
+  checkWrong(current: string): boolean {
     if (current != this.selectedAnswer) return false;
     return current != this.correctAnswer ? true : false;
   }

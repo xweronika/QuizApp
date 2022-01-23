@@ -3,10 +3,13 @@
         formArrayName="details">
         <mat-radio-group [formGroupName]="i">
             <input (input)="emit()" class="font-2 m" placeholder="Question" formControlName="question">
-            <div class="radio" *ngFor="let answer of detail.answers; let j = index; trackBy:trackByFn"
-                formGroupName="answers">
-                <mat-radio-button (change)="radioChange(i, j)" [checked]="!j" [value]="j"></mat-radio-button>
-                <input [formControlName]="j" (input)="emit()" class="font-2" [placeholder]="'Answer '+(j+1)">
+            <div class="valid">{{ getError('question', i)}}</div>
+            <div *ngFor="let answer of detail.answers; let j = index; trackBy:trackByFn" formGroupName="answers">
+                <div class="radio">
+                    <mat-radio-button (change)="radioChange(i, j)" [checked]="!j" [value]="j"></mat-radio-button>
+                    <input [formControlName]="j" (input)="emit()" class="font-2" [placeholder]="'Answer '+(j+1)">
+                </div>
+                <div class="valid v1">{{ getAnswerError(i, j)}}</div>
             </div>
         </mat-radio-group>
     </div>

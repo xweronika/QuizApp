@@ -1,29 +1,27 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { FormArray, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-add-btns',
   templateUrl: './add-btns.component.html',
   styleUrls: ['./add-btns.component.scss']
 })
-export class AddBtnsComponent implements OnInit {
+export class AddBtnsComponent {
 
-  @Input() quiz: any = new EventEmitter();
-  @Input() details: any = new EventEmitter();
+  @Input() public quiz: any = new EventEmitter<FormGroup>();
+  @Input() public details: any = new EventEmitter<FormGroup>();
 
-  @Output() add = new EventEmitter();
-  @Output() less = new EventEmitter();
-  @Output() submit = new EventEmitter();
+  @Output() public add = new EventEmitter();
+  @Output() public less = new EventEmitter();
+  @Output() public submit = new EventEmitter();
 
-  constructor() { }
-  ngOnInit(): void { }
-
-  addDisabled() {
+  addDisabled(): boolean {
     return this.details.value?.length > 20 ? true : false;
   }
-  lessDisabled() {
+  lessDisabled(): boolean {
     return this.details.value?.length < 2 ? true : false;
   }
-  submitDisabled() {
+  submitDisabled(): boolean {
     return !this.quiz.valid || !this.details.valid;
   }
 }

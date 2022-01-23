@@ -19,9 +19,10 @@ textarea {
 input:focus {
   border: 2px solid #ff0058 !important;
 }
-.valid {
-  margin: -10px 10px 10px !important; 
+.valid.v1 {
+  margin-top: -10px;
+  margin-bottom: 10px;
 }
-.valid.m {
-  margin-top: -14px 10px 10px !important; 
+.valid.v2 {
+  margin-top: -15px;
 }

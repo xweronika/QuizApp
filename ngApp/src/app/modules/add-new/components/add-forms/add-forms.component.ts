@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { ValidService } from 'src/app/core/services/valid.service';
 
 @Component({
   selector: 'app-add-forms',
@@ -7,10 +8,10 @@ import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./add-forms.component.scss']
 })
 export class AddFormsComponent {
-  @Output() update = new EventEmitter();
+  @Output() private update = new EventEmitter<FormArray>();
   public form: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private validService: ValidService) {
     this.form = fb.group({
       details: this.fb.array([])
     });
@@ -18,7 +19,18 @@ export class AddFormsComponent {
     this.add();
   }
 
-  add() {
+  getError(name: string, i: number): string {
+    const form = (this.form.controls['details'] as FormArray).controls[i] as FormGroup;
+    const control = form.controls[name] as FormControl;
+    return this.validService.getError(name, control);
+  }
+  getAnswerError(i: number, j: number): string {
+    const form = (this.form.controls['details'] as FormArray).controls[i] as FormGroup;
+    const control = ((form.controls['answers'] as FormArray).controls[j] as FormControl);
+    return this.validService.getError('answer', control);
+  }
+
+  add(): void {
     const details = this.form.controls['details'] as FormArray;
     const answers = Array.from({ length: 4 }, () =>
       this.fb.control('', [Validators.required, Validators.minLength(9), Validators.maxLength(10)]));
@@ -30,24 +42,24 @@ export class AddFormsComponent {
     this.emit();
   }
 
-  async less() {
+  less(): void {
     const details = this.form.controls['details'] as FormArray;
     details.removeAt(details.length - 1);
     this.emit();
   }
 
-  trackByFn(index: number) {
+  radioChange(i: number, j: number): void {
+    let details = (this.form.get('details') as FormArray);
+    let correct = (details.controls[i] as FormArray).get('correct');
+    correct!.setValue(j);
+    this.emit();
+  }
+
+  trackByFn(index: number): number {
     return index;
   }
 
-  emit() {
-    this.update.emit(this.form.controls['details']);
-  }
-
-  radioChange(detailIndex: number, radioIndex: number) {
-    let details = (this.form.get('details') as FormArray);
-    let correct = (details.controls[detailIndex] as FormArray).get('correct');
-    correct!.setValue(radioIndex);
-    this.emit();
+  emit(): void {
+    this.update.emit(this.form.controls['details'] as FormArray);
   }
 }
