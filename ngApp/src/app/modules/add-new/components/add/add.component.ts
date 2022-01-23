@@ -3,6 +3,8 @@ import { FormArray, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { QuizService } from '../../../../core/services/quiz.service'
 import { AddFormsComponent } from '../add-forms/add-forms.component';
+import { MatDialog } from '@angular/material/dialog';
+import { AddDialogComponent } from '../add-dialog/add-dialog.component';
 
 @Component({
   selector: 'app-add',
@@ -11,21 +13,36 @@ import { AddFormsComponent } from '../add-forms/add-forms.component';
 })
 export class AddComponent {
   @ViewChild(AddFormsComponent) forms: AddFormsComponent = {} as AddFormsComponent;
-
   public quiz: any = {};
   public details: any = {};
 
-  constructor(private quizService: QuizService, private router: Router) { }
+  constructor(private quizService: QuizService, private router: Router, public dialog: MatDialog) { }
   updateQuiz(quiz: FormGroup) {
     this.quiz = quiz;
+    console.log(quiz)
   }
   updateDetails(details: FormArray) {
     this.details = details;
   }
 
-  submit() {
-    let newQuiz = { ...this.quiz.value, details: this.details.value };
+  submit(): void {
+    if (Object.keys(this.quiz).length) this.openDialog();
+    else console.log('error');
+  }
 
+  openDialog(): void {
+    const dialogRef = this.dialog.open(AddDialogComponent, {
+      width: '500px',
+      data: { agree: false, name: this.quiz.value['category'] },
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      this.addNewQuiz();
+      console.log('The dialog was closed', result);
+    });
+  }
+
+  addNewQuiz() {
+    let newQuiz = { ...this.quiz.value, details: this.details.value };
     this.quizService.addQuiz(newQuiz)
       .subscribe({
         next: res => { this.router.navigate([`/quizzes/${res}`]); },

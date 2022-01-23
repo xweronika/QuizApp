@@ -7,7 +7,7 @@ import { AddDescComponent } from './components/add-desc/add-desc.component';
 import { SharedModule } from '../../shared/shared.module';
 import { TranslateModule } from '@ngx-translate/core';
 import { AddFormsComponent } from './components/add-forms/add-forms.component';
-import { AddModalComponent } from './components/add-modal/add-modal.component';
+import { AddDialogComponent } from './components/add-dialog/add-dialog.component';
 
 @NgModule({
   declarations: [
@@ -15,13 +15,16 @@ import { AddModalComponent } from './components/add-modal/add-modal.component';
     AddDescComponent,
     AddComponent,
     AddFormsComponent,
-    AddModalComponent,
+    AddDialogComponent
   ],
   imports: [
     CommonModule,
     AddNewRoutingModule,
     TranslateModule,
     SharedModule
-  ]
+  ],
+  entryComponents: [
+    AddDialogComponent
+  ],
 })
 export class AddNewModule { }
