@@ -1,8 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { FormArray, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { NewQuiz } from 'src/app/core/interfaces/quiz';
-import { Details, QuizService } from '../../../../core/services/quiz.service'
+import { QuizService } from '../../../../core/services/quiz.service'
 import { AddFormsComponent } from '../add-forms/add-forms.component';
 
 @Component({
@@ -13,9 +12,10 @@ import { AddFormsComponent } from '../add-forms/add-forms.component';
 export class AddComponent {
   @ViewChild(AddFormsComponent) forms: AddFormsComponent = {} as AddFormsComponent;
 
-  public quiz: object = {};
-  public details: object = {};
+  public quiz: any = {};
+  public details: any = {};
 
+  constructor(private quizService: QuizService, private router: Router) { }
   updateQuiz(quiz: FormGroup) {
     this.quiz = quiz;
   }
@@ -24,11 +24,12 @@ export class AddComponent {
   }
 
   submit() {
+    let newQuiz = { ...this.quiz.value, details: this.details.value };
 
-    // this.quizService.addQuiz(this.quiz)
-    //   .subscribe({
-    //     next: res => { this.router.navigate([`/quizzes/${res}`]); },
-    //     error: err => { console.log(err.error) }
-    //   });
+    this.quizService.addQuiz(newQuiz)
+      .subscribe({
+        next: res => { this.router.navigate([`/quizzes/${res}`]); },
+        error: err => { console.log(err.error) }
+      });
   }
 }

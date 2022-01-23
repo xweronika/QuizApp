@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment';
-import { Quiz, NewQuiz } from '../interfaces/quiz';
+import { Quiz } from '../interfaces/quiz';
+import { NewQuiz } from '../interfaces/new-quiz';
 import { Score } from '../interfaces/score';
 import { Details } from '../interfaces/details';
 
@@ -33,7 +34,6 @@ export class QuizService {
     return this.score ? `${this.score.points} / ${this.score.max}` : '';
   }
   addQuiz(newQuiz: NewQuiz) {
-    console.log(newQuiz)
     return this.http.post<number>(this.url, newQuiz);
   }
 }

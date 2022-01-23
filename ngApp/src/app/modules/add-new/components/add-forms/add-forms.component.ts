@@ -60,7 +60,6 @@ export class AddFormsComponent {
   }
 
   emit(): void {
-    console.log(this.form.controls['details'])
     this.update.emit(this.form.controls['details'] as FormArray);
   }
 }
