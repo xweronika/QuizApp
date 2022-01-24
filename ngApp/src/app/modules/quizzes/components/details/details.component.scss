@@ -14,11 +14,11 @@
 
 //block btn answers
 .btn-hover:hover{
-  background: #03a9f4;
+  background: var(--blue);
   cursor: pointer;
 }
 .b-red{
-  background: #ff0058;
+  background: var(--pink);
   animation: tored 2s;
 }
 .b-green{
@@ -31,8 +31,8 @@
   to {background:  #53ff03}
 }
 @keyframes tored {
-  from {background: #03a9f4}
-  to {background:  #ff0058}
+  from {background: var(--blue)}
+  to {background:  var(--pink)}
 }
 
 

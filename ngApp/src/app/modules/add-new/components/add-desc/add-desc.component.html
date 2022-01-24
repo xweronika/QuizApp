@@ -1,8 +1,8 @@
 <div class="container-form" [formGroup]="quiz">
-  <input class="font-2 form-control" formControlName="category" placeholder="Category" (input)="update.emit(quiz)">
+  <input class="form-control" formControlName="category" placeholder="Category" (input)="update.emit(quiz)">
   <div class="valid v1">{{ getError('category')}} </div>
 
-  <textarea class="font-2" formControlName="description" placeholder="Description"
+  <textarea formControlName="description" placeholder="Description"
     (input)="update.emit(quiz)"></textarea>
   <div class="valid v2">{{ getError('description')}}</div>
 </div>

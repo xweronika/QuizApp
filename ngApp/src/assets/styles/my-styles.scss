@@ -3,9 +3,6 @@
 .font-1 {
     font-family: 'Bungee', cursive !important;
 }
-.font-2 {
-    font-family: 'Poppins', sans-seri !important;
-}
 
 .world-break {
   word-break: break-all; 
@@ -53,15 +50,15 @@
 }
 
 .card-glow.b0 {
-  background: linear-gradient(315deg, #03a9f4 0%, #ff0058 100%);
+  background: linear-gradient(315deg, var(--blue) 0%, var(--pink) 100%);
 }
 
 .card-glow.b1 {
-  background: linear-gradient(315deg, #4dff03 0%, #00d0ff 100%);
+  background: linear-gradient(315deg, var(--green) 0%, var(--light-blue) 100%);
 }
 
 .card-glow.b2 {
-  background: linear-gradient(45deg, #ffcc00 0%, #ff0058 100%);
+  background: linear-gradient(45deg, var(--yellow) 0%, var(--pink) 100%);
 }
 
 .card-glow span {
@@ -155,9 +152,9 @@
   min-width: 700px;
   max-width: 800px;
   margin: 70px auto 100px;
-  box-shadow: 1px 1px 40px 10px #ff0058;
+  box-shadow: 1px 1px 40px 10px var(--pink);
   border-radius: 35px 0;
-  background: linear-gradient(45deg, #ffcc00 0%, #ff0058 100%);
+  background: linear-gradient(45deg, var(--yellow) 0%, var(--pink) 100%);
   padding: 50px;  
 }
 
@@ -170,10 +167,16 @@
 
 // VALIDATION ERROR
 .valid {
-  @extend .font-2;
-  color: #ff0059;
+  color: var(--pink);
   font-size: 16px;
   margin-left: 3px;
 }
 
+// DIALOG
+mat-dialog-container {
+   background: black !important;
+   border: 6px solid white !important;
+   border-radius: 35px 0 !important;
+   padding: 45px 55px !important;
+}
 

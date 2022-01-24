@@ -1,5 +1,5 @@
 
-input.m {
+input.margin {
   margin-bottom: 10px;
   width: 97%;
   }
@@ -8,17 +8,17 @@ input.m {
     font-size: 20px;
     min-height: 35px;
     border: none;
-    border: 2px solid #ffcc00;
+    border: 2px solid var(--yellow);
     border-radius: 6px;
     outline: none;
     padding: 5px 10px;
-    color: #ff0058;
+    color: var(--pink);
   }
   input:focus {
-    border: 2px solid #ff0058 !important;
+    border: 2px solid var(--pink) !important;
   }
   ::placeholder {
-    color: #ffcc00;
+    color: var(--yellow);
   }
   
   .valid.v1 {
@@ -41,15 +41,15 @@ input.m {
   
   //color
   ::ng-deep .mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element {
-    background-color: #ff0058 !important;
+    background-color: var(--pink) !important;
   }
   
   ::ng-deep .mat-radio-button.mat-accent .mat-radio-inner-circle {
-    background-color: #ff0058 !important;
+    background-color: var(--pink) !important;
   }
   
   ::ng-deep.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
-   border-color:#ff0058 !important; 
+   border-color:var(--pink) !important; 
   }
   
   //size

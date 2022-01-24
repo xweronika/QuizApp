@@ -17,9 +17,9 @@ export class AddComponent {
   public details: any = {};
 
   constructor(private quizService: QuizService, private router: Router, public dialog: MatDialog) { }
+
   updateQuiz(quiz: FormGroup) {
     this.quiz = quiz;
-    console.log(quiz)
   }
   updateDetails(details: FormArray) {
     this.details = details;
@@ -32,12 +32,11 @@ export class AddComponent {
 
   openDialog(): void {
     const dialogRef = this.dialog.open(AddDialogComponent, {
-      width: '500px',
-      data: { agree: false, name: this.quiz.value['category'] },
+      width: 'auto',
+      data: { name: this.quiz.value['category'] },
     });
     dialogRef.afterClosed().subscribe(result => {
-      this.addNewQuiz();
-      console.log('The dialog was closed', result);
+      if (result) this.addNewQuiz();
     });
   }
 

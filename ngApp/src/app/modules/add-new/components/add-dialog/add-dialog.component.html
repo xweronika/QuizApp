@@ -1,12 +1,5 @@
-<h1 mat-dialog-title>Are you sure that you want add quiz {{data.name}}</h1>
-<div mat-dialog-content>
-  <p>What's your favorite animal?</p>
-
-    <mat-label>Favorite Animal</mat-label>
-    <input  [(ngModel)]="data.agree">
-
-</div>
-<div mat-dialog-actions>
-  <button mat-button (click)="onNoClick()">No Thanks</button>
-  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Ok</button>
-</div>
+<h1 mat-dialog-title>Are you sure that you want add quiz {{data.name}}?</h1>
+<mat-dialog-actions align="end">
+  <button class="btn" [mat-dialog-close]="true" cdkFocusInitial>Yes</button>
+  <button class="btn" (click)="onNoClick()">No</button>
+</mat-dialog-actions>

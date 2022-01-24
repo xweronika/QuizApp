@@ -21,7 +21,7 @@
   position: absolute;
   right: 25px;
   top: 35px; 
-  background-color: #ff0058;
+  background-color: var(--pink);
   border-radius: 2px;
   transform: rotate(45deg);
   transition: all .3s ease-in;
@@ -33,7 +33,7 @@
   position: absolute;
   right: 25px;
   top: 35px; 
-  background-color: #ff0058;
+  background-color: var(--pink);
   border-radius: 2px;
   transform: rotate(-45deg);
   transition: all .3s ease-in;
@@ -41,11 +41,11 @@
 
 .close-container:hover .leftright{
   transform: rotate(-45deg);
-  background-color: #ffcc00;
+  background-color: var(--yellow);
 }
 .close-container:hover .rightleft{
   transform: rotate(45deg);
-  background-color: #ffcc00
+  background-color: var(--yellow)
 }
 .close-container:hover label{
   opacity: 1;

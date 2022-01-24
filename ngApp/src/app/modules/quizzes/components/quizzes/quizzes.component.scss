@@ -71,19 +71,19 @@
 .container .box:nth-child(1n):before,
 .container .box:nth-child(1n):after
 {
-  background: linear-gradient(315deg, #ffbc00, #ff0058)
+  background: linear-gradient(315deg, var(--yellow), var(--pink))
 }
 
 .container .box:nth-child(2n):before,
 .container .box:nth-child(2n):after
 {
-  background: linear-gradient(315deg, #03a9f4, #ff0058)
+  background: linear-gradient(315deg, var(--blue), var(--pink))
 }
 
 .container .box:nth-child(4n+1):before,
 .container .box:nth-child(4n+1):after
 {
-  background: linear-gradient(315deg, #4dff03, #00d0ff)
+  background: linear-gradient(315deg, var(--green), var(--light-blue))
 }
 
 .container .box span

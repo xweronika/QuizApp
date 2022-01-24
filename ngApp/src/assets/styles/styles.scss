@@ -14,7 +14,14 @@
 :root {
 // COLORS
 --dark: #1d061a;
+--pink: #ff0058;
+--yellow: #ffcc00;
+--blue: #03a9f4;
+--light-blue: #00d0ff;
+--green: #4dff03;
 }
+
+* { font-family: 'Poppins', sans-seri; }
 
 html,
 body {
@@ -34,7 +41,7 @@ body {
 	::-webkit-scrollbar-thumb {
 		-webkit-border-radius: 10px;
 		border-radius: 10px;
-		background: linear-gradient(45deg, #ffcc00 0%, #ff0058 100%);
+		background: linear-gradient(45deg, var(--yellow) 0%, var(--pink) 100%);
 	}
 	::-webkit-scrollbar-thumb:hover {
 		background: linear-gradient(45deg, #ffcc0098 0%, #ff0059bb 100%);

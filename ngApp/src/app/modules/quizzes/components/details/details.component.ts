@@ -49,7 +49,7 @@ export class DetailsComponent implements OnInit, OnDestroy {
     } else this.activeIndex += 1
   }
   checkCorrect(current: number): boolean {
-    if (this.selectedAnswer == null) return false;
+    if (!this.isAnswer()) return false;
     return current == this.correctAnswer ? true : false;
   }
   checkWrong(current: number): boolean {
