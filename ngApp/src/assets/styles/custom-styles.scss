@@ -1,7 +1,7 @@
 
 // FONTS
 .font-1 {
-    font-family: 'Bungee', cursive !important;
+    font-family: 'Bungee' !important;
 }
 
 .world-break {
@@ -167,8 +167,9 @@
 
 // VALIDATION ERROR
 .valid {
-  color: var(--pink);
-  font-size: 16px;
+  color: rgb(255, 255, 255);
+  font-size: 15px;
+  font-weight: 500;
   margin-left: 3px;
 }
 

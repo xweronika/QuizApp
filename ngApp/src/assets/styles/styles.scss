@@ -1,15 +1,8 @@
 // THEMES
-//@import "./my-theme.scss";
+//@import "./custom-theme.scss";
 @import "@angular/material/prebuilt-themes/pink-bluegrey.css";
-@import "./my-styles.scss";
-
-// FONTS
-@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Poppins:wght@300;400;500;700&display=swap');
-@import url("https://fonts.googleapis.com/css2?family=Train+One&display=swap");
-// @font-face {
-// 	font-family: "Bungee";
-// 	src: url(../fonts/Bungee-Regular.ttf) format("opentype");
-// }
+@import "./custom-styles.scss";
+@import "./fonts.scss";
 
 :root {
 // COLORS
@@ -21,7 +14,7 @@
 --green: #4dff03;
 }
 
-* { font-family: 'Poppins', sans-seri; }
+* { font-family: 'Poppins', sans-serif !important; }
 
 html,
 body {
