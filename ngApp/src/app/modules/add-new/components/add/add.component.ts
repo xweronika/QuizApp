@@ -16,6 +16,7 @@ export class AddComponent {
   @ViewChild(AddFormsComponent) forms: AddFormsComponent = {} as AddFormsComponent;
   public quiz: any = {};
   public details: any = {};
+  public loading: boolean = false;
 
   constructor(
     private quizService: QuizService,
@@ -47,6 +48,7 @@ export class AddComponent {
   }
 
   addNewQuiz() {
+    this.loading = true;
     let newQuiz = { ...this.quiz.value, details: this.details.value };
     this.quizService.addQuiz(newQuiz)
       .subscribe({

@@ -1,4 +1,10 @@
-<app-add-desc (update)="updateQuiz($event)"></app-add-desc>
-<app-add-forms (update)="updateDetails($event)" #forms></app-add-forms>
-<app-add-btns (add)="forms.add()" (less)="forms.less()" (submit)="submit()" [quiz]="quiz" [details]="details">
-</app-add-btns>
+<ng-container *ngIf="!loading; else loader">
+    <app-add-desc (update)="updateQuiz($event)"></app-add-desc>
+    <app-add-forms (update)="updateDetails($event)" #forms></app-add-forms>
+    <app-add-btns (add)="forms.add()" (less)="forms.less()" (submit)="submit()" [quiz]="quiz" [details]="details">
+    </app-add-btns>
+</ng-container>
+
+<ng-template #loader>
+    <mat-spinner></mat-spinner>
+</ng-template>
