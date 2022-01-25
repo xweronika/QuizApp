@@ -2,9 +2,9 @@
     <div class="container">
         <div class="box" *ngFor="let quiz of quizzes" [routerLink]="quiz.id.toString()">
             <span></span>
-            <div class="content world-break">
+            <div class="content world-break hide-text">
                 <h2>{{quiz.category | translate}}</h2>
-                <p class="world-break">
+                <p class="hide-text world-break">
                     {{quiz.description | translate}}
                 </p>
             </div>

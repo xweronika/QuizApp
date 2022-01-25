@@ -5,14 +5,14 @@ exports.validator = async (req, res, next) => {
     // Category
     await check('category', 'Category is required.').notEmpty().run(req);
     await check('category')
-        .isLength({ min: 2, max: 50 })
-        .withMessage('Category must contain from 2 to 50 characters.').run(req)
+        .isLength({ min: 2, max: 25 })
+        .withMessage('Category must contain from 2 to 25 characters.').run(req)
 
     // Description
     await check('description', 'Description is required.').notEmpty().run(req);
     await check('description')
         .isLength({ min: 10, max: 100 })
-        .withMessage('Description must contain from 2 to 50 characters.').run(req)
+        .withMessage('Description must contain from 10 to 100 characters.').run(req)
 
     // Questions array
     await check('details', "Minimum one question with answers is required.")

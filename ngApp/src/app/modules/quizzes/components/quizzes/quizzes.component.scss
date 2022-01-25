@@ -20,7 +20,7 @@
 {
   cursor: pointer;
   position: relative;
-  width: 320px;
+  width: 330px;
   height: 310px;
   display: flex;
   justify-content: center;
@@ -40,7 +40,7 @@
   text-decoration: none;
   background: #fff;
   border-radius: 8px;
-  transform: skewX(10deg);
+  transform: skewX(5deg);
   transition: 4s;
 }
 
@@ -54,7 +54,7 @@
   height: 100%;
   background: #fff;
   border-radius: 8px;
-  transform: skewX(15deg);
+  transform: skewX(0deg);
   transition: 4s;
   filter: blur(30px);
 }
@@ -62,7 +62,7 @@
 .container .box:hover:before,
 .container .box:hover:after
 {
-  transform: skewX(0deg);
+  transform: skewX(10deg);
   left: 20px;
   width: calc(100% - 90px);
   
@@ -168,6 +168,8 @@
 {
   position: relative;
   left: -25px;
+  width: 210px;
+  height: 100px;
   padding: 60px 40px;
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
@@ -221,3 +223,10 @@
   border: 1px solid rgba(255, 0, 88, 0.4);
   box-shadow: 0 1px 15px rgba(1, 1, 1, 0.2);
 }
+.hide-text{
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
