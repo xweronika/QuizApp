@@ -176,8 +176,20 @@
 // DIALOG
 mat-dialog-container {
    background: black !important;
-   border: 6px solid white !important;
+   border: 6px solid white;
    border-radius: 35px 0 !important;
    padding: 45px 55px !important;
+}
+
+// SNACKBAR
+.snackbar {
+  background: rgb(255, 60, 0);
+  border: ridge white;
+  border-radius: 13px 0 !important;
+  color: white;
+  font-weight: 600;
+}
+.snackbar.success{
+  background: rgb(29, 194, 0);
 }
 

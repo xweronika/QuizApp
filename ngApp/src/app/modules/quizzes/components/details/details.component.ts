@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription, map, switchMap } from 'rxjs';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { QuizService, Details } from '../../../../core/services/quiz.service';
 
 @Component({
@@ -19,15 +20,21 @@ export class DetailsComponent implements OnInit, OnDestroy {
   constructor(
     public quizService: QuizService,
     private router: Router,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute,
+    private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.subscribe = this.route.params.pipe(
       map(({ id }) => id),
       switchMap((id: number) => this.quizService.getQuestions(id)))
       .subscribe({
-        next: res => { this.data = res },
-        error: err => { console.log(err.error) }
+        next: res => {
+          res.length ? this.data = res : this.router.navigate(['/quizzes']);
+        },
+        error: err => {
+          this.snackBar.open(err.statusText, 'OK',
+            { duration: 10000, panelClass: ['snackbar'] })
+        }
       });
   }
   ngOnDestroy(): void {

@@ -24,6 +24,7 @@ export const transLoader = {
         FormsModule,
         ReactiveFormsModule
     ],
+    declarations: [],
 
 })
 export class SharedModule { }

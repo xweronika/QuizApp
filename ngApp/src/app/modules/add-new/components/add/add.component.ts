@@ -5,6 +5,7 @@ import { QuizService } from '../../../../core/services/quiz.service'
 import { AddFormsComponent } from '../add-forms/add-forms.component';
 import { MatDialog } from '@angular/material/dialog';
 import { AddDialogComponent } from '../add-dialog/add-dialog.component';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-add',
@@ -16,7 +17,11 @@ export class AddComponent {
   public quiz: any = {};
   public details: any = {};
 
-  constructor(private quizService: QuizService, private router: Router, public dialog: MatDialog) { }
+  constructor(
+    private quizService: QuizService,
+    private router: Router,
+    public dialog: MatDialog,
+    private snackBar: MatSnackBar) { }
 
   updateQuiz(quiz: FormGroup) {
     this.quiz = quiz;
@@ -27,7 +32,8 @@ export class AddComponent {
 
   submit(): void {
     if (Object.keys(this.quiz).length) this.openDialog();
-    else console.log('error');
+    else this.snackBar.open('Please complete all fields.', 'OK',
+      { duration: 10000, panelClass: ['snackbar'] })
   }
 
   openDialog(): void {
@@ -45,7 +51,10 @@ export class AddComponent {
     this.quizService.addQuiz(newQuiz)
       .subscribe({
         next: res => { this.router.navigate([`/quizzes/${res}`]); },
-        error: err => { console.log(err.error) }
+        error: err => {
+          this.snackBar.open(err.error.msg || err.statusText, 'OK',
+            { duration: 10000, panelClass: ['snackbar'] })
+        }
       });
   }
 }

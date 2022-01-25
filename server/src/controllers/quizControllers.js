@@ -7,7 +7,7 @@ exports.get = async (req, res, next) => {
     const [quizzes] = await Quiz.findAll();
     res.status(200).json(quizzes);
   } catch (error) {
-    next(error);
+    res.status(404).send(error);
   }
 };
 
@@ -16,7 +16,7 @@ exports.getById = async (req, res, next) => {
     const [quiz] = await Quiz.findById(req.params.id);
     res.status(200).json(quiz[0]);
   } catch (error) {
-    next(error);
+    res.status(404).send(error);
   }
 };
 
@@ -26,7 +26,7 @@ exports.getQuestions = async (req, res, next) => {
     for (let i = 0; i < details.length; i++) details[i]["index"] = i;
     res.status(200).json(details);
   } catch (error) {
-    next(error);
+    res.status(404).send(error);
   }
 };
 
@@ -44,7 +44,7 @@ exports.add = async (req, res, next) => {
     }
     res.status(201).json(id);
   } catch (error) {
-    next(error);
+    res.status(404).send(error);
   }
 };
 

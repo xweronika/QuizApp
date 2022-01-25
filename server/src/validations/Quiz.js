@@ -40,8 +40,8 @@ exports.validator = async (req, res, next) => {
 
 
     if (!validationResult(req).isEmpty()) {
-        const errors = validationResult(req).errors;
-        return res.status(400).json({ status: 'error', errors: errors });
+        const error = validationResult(req).errors[0];
+        return res.status(400).json({msg: error.msg});
     }
     next();
 };
