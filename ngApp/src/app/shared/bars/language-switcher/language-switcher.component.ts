@@ -8,17 +8,20 @@ import { environment } from '../../../../environments/environment';
   styleUrls: ['./language-switcher.component.scss'],
 })
 export class LanguageSwitcherComponent {
-  public names: object | any = environment.supported_langs;
-  private supported_langs: Array<string> = Object.keys(environment.supported_langs);
+
+  private default_lang = 'en';
+  private supported_langs = { 'en': 'English', 'pl': 'Polish' };
+
+  public names: object | any = this.supported_langs;
+  private keys: Array<string> = Object.keys(this.supported_langs);
   private currentLang: string = localStorage.getItem('language') || this.translate.getBrowserLang() || '';
 
   constructor(public translate: TranslateService) {
-    translate.addLangs(this.supported_langs);
-    translate.setDefaultLang(environment.default_lang);
-    translate.use(this.supported_langs.includes(this.currentLang)
-      ? this.currentLang
-      : environment.default_lang);
+    translate.addLangs(this.keys);
+    translate.setDefaultLang(this.default_lang);
+    translate.use(this.keys.includes(this.currentLang) ? this.currentLang : this.default_lang);
   }
+  
   changeLanguage(langselect: string) {
     localStorage.setItem('language', langselect)
     this.translate.use(langselect);

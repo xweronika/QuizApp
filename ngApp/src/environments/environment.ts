@@ -7,9 +7,6 @@ export const environment = {
 
   title: 'Dev Environment Heading',
   apiURL: 'http://localhost:3000',
-
-  default_lang: 'en',
-  supported_langs: { 'en': 'English', 'pl': 'Polish' }
 };
 
 /*
