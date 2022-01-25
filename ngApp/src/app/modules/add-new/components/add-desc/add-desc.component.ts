@@ -17,7 +17,7 @@ export class AddDescComponent {
     public translate: TranslateService) {
     this.quiz = fb.group({
       category: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(25)]],
-      description: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(100)]],
+      description: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(120)]],
     });
   }
 

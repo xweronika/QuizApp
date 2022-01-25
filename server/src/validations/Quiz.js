@@ -11,8 +11,8 @@ exports.validator = async (req, res, next) => {
     // Description
     await check('description', 'Description is required.').notEmpty().run(req);
     await check('description')
-        .isLength({ min: 10, max: 100 })
-        .withMessage('Description must contain from 10 to 100 characters.').run(req)
+        .isLength({ min: 10, max: 120 })
+        .withMessage('Description must contain from 10 to 120 characters.').run(req)
 
     // Questions array
     await check('details', "Minimum one question with answers is required.")
