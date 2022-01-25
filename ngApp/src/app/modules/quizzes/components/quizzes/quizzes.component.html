@@ -1,9 +1,8 @@
-<div class="body">
+<div class="body" *ngIf="quizzes.length; else loader">
     <div class="container">
         <div class="box" *ngFor="let quiz of quizzes" [routerLink]="quiz.id.toString()">
             <span></span>
-            <div class="content" style="
-                word-break: break-all;">
+            <div class="content world-break">
                 <h2>{{quiz.category | translate}}</h2>
                 <p class="world-break">
                     {{quiz.description}}
@@ -12,3 +11,7 @@
         </div>
     </div>
 </div>
+
+<ng-template #loader>
+    <mat-spinner></mat-spinner>
+</ng-template>

@@ -189,7 +189,17 @@ mat-dialog-container {
   color: white;
   font-weight: 600;
 }
-.snackbar.success{
+.snackbar-success{
+  @extend .snackbar;
   background: rgb(29, 194, 0);
+}
+
+//LOADER
+.mat-spinner {
+  position: absolute;
+  left: 50%;
+  top: 35%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 

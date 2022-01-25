@@ -50,7 +50,11 @@ export class AddComponent {
     let newQuiz = { ...this.quiz.value, details: this.details.value };
     this.quizService.addQuiz(newQuiz)
       .subscribe({
-        next: res => { this.router.navigate([`/quizzes/${res}`]); },
+        next: res => {
+          this.snackBar.open('Quiz has been added successfully', 'OK',
+            { duration: 5000, panelClass: ['snackbar-success'] });
+          this.router.navigate([`/quizzes/${res}`]);
+        },
         error: err => {
           this.snackBar.open(err.error.msg || err.statusText, 'OK',
             { duration: 10000, panelClass: ['snackbar'] })

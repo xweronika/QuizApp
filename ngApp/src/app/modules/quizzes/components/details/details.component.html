@@ -1,5 +1,5 @@
-<div class="container-glow" *ngIf="data">
-    <div class="card-glow" [ngClass]="'b'+activeIndex%3" *ngFor="let detail of data | filter:activeIndex;">
+<div class="container-glow" *ngIf="data.length; else loader">
+    <div class="card-glow" [ngClass]="'b'+ activeIndex % 3" *ngFor="let detail of data | filter:activeIndex;">
         <span></span>
         <div class="content-glow">{{activeIndex+1}} / {{data.length}}<br>
             <div class="content-glow-title">
@@ -13,3 +13,6 @@
         </div>
     </div>
 </div>
+<ng-template #loader>
+    <mat-spinner></mat-spinner>
+</ng-template>

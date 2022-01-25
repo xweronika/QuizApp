@@ -1,4 +1,4 @@
-<div class="container-glow" *ngIf="quiz">
+<div class="container-glow" *ngIf="quiz; else loader">
     <div class="card-glow b1">
         <span></span>
         <div class="content-glow">
@@ -9,3 +9,6 @@
         </div>
     </div>
 </div>
+<ng-template #loader>
+    <mat-spinner></mat-spinner>
+</ng-template>
