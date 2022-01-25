@@ -4,7 +4,8 @@
         <div class="content-glow">{{activeIndex+1}} / {{data.length}}<br>
             <div class="content-glow-title">
                 <h2 class="world-break">{{detail.question}}</h2><br>
-                <mat-icon *ngIf="isAnswer()" class="icon" (click)="onNext()">arrow_forward</mat-icon>
+                <mat-icon *ngIf="isAnswer()" class="icon" (click)="onNext()"><img src="assets/icons/arrow.png" />
+                </mat-icon>
             </div>
             <div *ngFor="let answer of detail.answers; let i = index"><button
                     [ngClass]="{'b-green': checkCorrect(i), 'b-red': checkWrong(i), 'btn-hover': !isAnswer()}"

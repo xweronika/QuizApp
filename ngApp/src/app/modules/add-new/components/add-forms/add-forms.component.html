@@ -2,14 +2,15 @@
     <div class="container-form" *ngFor="let detail of form.controls['details']?.value; let i = index; trackBy:trackByFn"
         formArrayName="details">
         <mat-radio-group [formGroupName]="i">
-            <input (input)="emit()" class="margin" placeholder="Question" formControlName="question">
-            <div class="valid">{{ getError('question', i)}}</div>
+            <input (input)="emit()" class="margin" [placeholder]="translate.instant('add.question')"
+                formControlName="question">
+            <div class="valid">{{getError('question', i)}}</div>
             <div *ngFor="let answer of detail.answers; let j = index; trackBy:trackByFn" formGroupName="answers">
                 <div class="radio">
                     <mat-radio-button (change)="radioChange(i, j)" [checked]="!j" [value]="j"></mat-radio-button>
-                    <input [formControlName]="j" (input)="emit()" [placeholder]="'Answer '+(j+1)">
+                    <input [formControlName]="j" (input)="emit()" [placeholder]="getPlaceholder(j)">
                 </div>
-                <div class="valid v1">{{ getAnswerError(i, j)}}</div>
+                <div class="valid v1">{{getAnswerError(i, j)}}</div>
             </div>
         </mat-radio-group>
     </div>

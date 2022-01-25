@@ -1,5 +1,5 @@
 <div class="container-btn">
-    <button [disabled]="addDisabled()" class="btn" (click)="add.emit()">More</button>
-    <button [disabled]="lessDisabled()" class="btn" (click)="less.emit()">Less</button>
-    <button [disabled]="submitDisabled()" class="btn" (click)="submit.emit()">Submit</button>
+    <button [disabled]="addDisabled()" class="btn" (click)="add.emit()">{{'add.more' | translate }}</button>
+    <button [disabled]="lessDisabled()" class="btn" (click)="less.emit()">{{'add.less' | translate }}</button>
+    <button [disabled]="submitDisabled()" class="btn" (click)="submit.emit()">{{'add.submit' | translate }}</button>
 </div><br><br>

@@ -1,16 +1,27 @@
 {
-    "HOME": {
-        "QUIZZES": "Quizy",
-        "ADD_NEW": "Dodaj",
-        "INFO": "Info"
+    "home": {
+        "quizzes": "Quizy",
+        "add_new": "Dodaj",
+        "info": "Info"
     },
-    "QUIZZES": {
-        "OPEN": "Otwórz",
-        "SHARE": "Udostępnij",
-        "SUBMIT": "Zatwierdź",
-        "YOUR_SCORE": "Twój wynik:"
+    "quizzes": {
+        "your_score": "Twój wynik"
     },
-
-    
+    "add": {
+        "please_complete": "Proszę wypełnić wszystkie pola.",
+        "quiz_added": "Quiz został dodany pomyślnie.",
+        "add_sure": "Czy na pewno chcesz dodać quiz",
+        "more": "Więcej",
+        "less": "Mniej",
+        "submit": "Zatwierdź",
+        "description": "Opis",
+        "category": "Kategoria",
+        "question": "Pytanie",
+        "answer": "Odpowiedź"
+    },
+    "shared": {
+        "yes": "Tak",
+        "no": "Nie"
+    },
     "Quiz What I like": "Quiz co ja lubię"
 }

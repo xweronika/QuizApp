@@ -19,11 +19,11 @@
 }
 .b-red{
   background: var(--pink);
-  animation: tored 2s;
+  animation: tored 1s;
 }
 .b-green{
   background: #53ff03;
-  animation: togreen 2s;
+  animation: togreen 1s;
 }
 
 @keyframes togreen {

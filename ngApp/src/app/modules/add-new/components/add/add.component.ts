@@ -6,6 +6,7 @@ import { AddFormsComponent } from '../add-forms/add-forms.component';
 import { MatDialog } from '@angular/material/dialog';
 import { AddDialogComponent } from '../add-dialog/add-dialog.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-add',
@@ -22,7 +23,8 @@ export class AddComponent {
     private quizService: QuizService,
     private router: Router,
     public dialog: MatDialog,
-    private snackBar: MatSnackBar) { }
+    private snackBar: MatSnackBar,
+    private translate: TranslateService) { }
 
   updateQuiz(quiz: FormGroup) {
     this.quiz = quiz;
@@ -33,7 +35,7 @@ export class AddComponent {
 
   submit(): void {
     if (Object.keys(this.quiz).length) this.openDialog();
-    else this.snackBar.open('Please complete all fields.', 'OK',
+    else this.snackBar.open(this.translate.instant('add.please_complete'), 'OK',
       { duration: 10000, panelClass: ['snackbar'] })
   }
 
@@ -53,7 +55,7 @@ export class AddComponent {
     this.quizService.addQuiz(newQuiz)
       .subscribe({
         next: res => {
-          this.snackBar.open('Quiz has been added successfully', 'OK',
+          this.snackBar.open(this.translate.instant('add.quiz_added'), 'OK',
             { duration: 5000, panelClass: ['snackbar-success'] });
           this.router.navigate([`/quizzes/${res}`]);
         },

@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { TranslateService } from '@ngx-translate/core';
 import { ValidService } from 'src/app/core/services/valid.service';
 
 @Component({
@@ -11,7 +12,10 @@ export class AddFormsComponent {
   @Output() private update = new EventEmitter<FormArray>();
   public form: FormGroup;
 
-  constructor(private fb: FormBuilder, private validService: ValidService) {
+  constructor(
+    private fb: FormBuilder,
+    private validService: ValidService,
+    public translate: TranslateService) {
     this.form = fb.group({
       details: this.fb.array([])
     });
@@ -61,5 +65,9 @@ export class AddFormsComponent {
 
   emit(): void {
     this.update.emit(this.form.controls['details'] as FormArray);
+  }
+
+  getPlaceholder(index: number) {
+    return `${this.translate.instant('add.answer')} ${(index + 1)}`
   }
 }

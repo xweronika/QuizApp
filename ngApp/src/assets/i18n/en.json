@@ -1,16 +1,30 @@
 {
-    "HOME": {
-        "QUIZZES": "Quizzes",
-        "ADD_NEW": "Add new",
-        "INFO": "Info"
+    "home": {
+        "quizzes": "Quizzes",
+        "add_new": "Add new",
+        "info": "Info"
     },
-    "QUIZZES": {
+    "quizzes": {
         "OPEN": "Open",
         "SHARE": "Share",
         "SUBMIT": "Submit",
-        "YOUR_SCORE": "Your score:"
+        "your_score": "Your score:"
     },
-
-
+    "add": {
+        "please_complete": "Please complete all fields.",
+        "quiz_added": "Quiz has been added successfully.",
+        "add_sure": "Are you sure that you want add quiz",
+        "more": "More",
+        "less": "Less",
+        "submit": "Submit",
+        "description": "Description",
+        "category": "Category",
+        "question": "Question",
+        "answer": "Answer"
+    },
+    "shared": {
+        "yes": "yes",
+        "no": "no"
+    },
     "Quiz What I likee": "Quiz What I like"
 }
