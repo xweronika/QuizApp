@@ -5,10 +5,11 @@
         "info": "Info"
     },
     "quizzes": {
-        "OPEN": "Open",
-        "SHARE": "Share",
-        "SUBMIT": "Submit",
-        "your_score": "Your score:"
+        "your_score": "Your score",
+        "try_again": "Try again",
+        "quizzes": "Quizzes",
+        "back": "Back",
+        "start": "Start"
     },
     "add": {
         "please_complete": "Please complete all fields.",
@@ -20,11 +21,19 @@
         "description": "Description",
         "category": "Category",
         "question": "Question",
-        "answer": "Answer"
+        "answer": "Answer",
+        "field_description": "Field description",
+        "field_category": "Field category",
+        "field_question": "Field question",
+        "field_answer": "Field answer",
+        "is_required": "is required",
+        "cannot_shorter": "can not be shorter than",
+        "cannot_longer": "can not be longer than",
+        "characters": "characters"
     },
     "shared": {
-        "yes": "yes",
-        "no": "no"
+        "yes": "Yes",
+        "no": "No"
     },
-    "Quiz What I likee": "Quiz What I like"
+    "Quiz What I like": "Quiz What I like"
 }

@@ -3,9 +3,10 @@
         <span></span>
         <div class="content-glow">
             <div class="content-glow-title">
-                <h2 class="title world-break">{{quiz.category}}</h2>
-            </div><button class="block-btn-outlined world-break">{{quiz.description}}</button><button
-                class="btn" (click)="onClick()">Start</button>
+                <h2 class="title world-break">{{quiz.category | translate }}</h2>
+            </div><button class="block-btn-outlined world-break">{{quiz.description | translate }}</button>
+            <button class="btn" routerLink="/quizzes">{{'quizzes.back' | translate }}</button>
+            <button class="btn" (click)="onClick()">{{'quizzes.start' | translate }}</button>
         </div>
     </div>
 </div>

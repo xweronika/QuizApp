@@ -5,7 +5,11 @@
         "info": "Info"
     },
     "quizzes": {
-        "your_score": "Twój wynik"
+        "your_score": "Twój wynik",
+        "try_again": "Od nowa",
+        "quizzes": "Quizy",
+        "back": "Wróć",
+        "start": "Zacznij"
     },
     "add": {
         "please_complete": "Proszę wypełnić wszystkie pola.",
@@ -17,11 +21,20 @@
         "description": "Opis",
         "category": "Kategoria",
         "question": "Pytanie",
-        "answer": "Odpowiedź"
+        "answer": "Odpowiedź",
+        "field_description": "Pole opisu",
+        "field_category": "Pole kategorii",
+        "field_question": "Pole pytania",
+        "field_answer": "Pole odpowiedzi",
+        "is_required": "jest wymagane",
+        "cannot_shorter": "nie może być krótsze niż",
+        "cannot_longer": "nie może być dłóższe niż",
+        "characters": "znaków"
     },
     "shared": {
         "yes": "Tak",
         "no": "Nie"
     },
+    
     "Quiz What I like": "Quiz co ja lubię"
 }
