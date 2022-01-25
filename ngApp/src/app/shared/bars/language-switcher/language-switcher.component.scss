@@ -7,28 +7,19 @@
   transform: translate(-2px, 44px) !important;
   visibility: hidden;
 }
-
 .mat-option.mat-selected:not(.mat-option-multiple):not(.mat-option-disabled){
   color: var(--light-blue);
 }
 
-
 // DOTS
-@mixin text-invisible {
-    text-indent: -9999em;
-  }
-  $dot-menu-size: 55px;
-  $dot-menu-dot-color: var(--light-blue);
-  $dot-menu-dot-color-active: var(--green);
-  $dot-menu-dot-size: 9.16px;
   @mixin dot-menu-circle {
     content: "";
     position: absolute;
-    width: $dot-menu-dot-size;
-    height: $dot-menu-dot-size;
-    border-radius: $dot-menu-dot-size;
+    width: 9px;
+    height: 9px;
+    border-radius: 9px;
     transition: .8s;
-    background-color: $dot-menu-dot-color;
+    background-color: var(--light-blue);
   }
   .dot-menu {
     position: absolute;
@@ -41,39 +32,39 @@
   .dot-menu__label:before,
   .dot-menu__label:after {
     @include dot-menu-circle;
-    left: $dot-menu-size / 2 - $dot-menu-dot-size / 2;
+    left: 23px;
     transition: .2s;
   }
   
   .dot-menu__label:after {
-    top: $dot-menu-size - $dot-menu-size / 3;
+    top: 37px;
   }
   .dot-menu__label:before {
-    top: $dot-menu-size / 6;
+    top: 9px;
   }
   .dot-menu__checkbox:hover {
     ~ .dot-menu__label:before,
     ~ .dot-menu__label span:before,
     ~ .dot-menu__label:after {
-      background-color: $dot-menu-dot-color-active;
+      background-color: var(--green);
       //move all icons into the center
-      top: $dot-menu-size / 2 - $dot-menu-dot-size / 2
+      top: 23px;
     }
     ~ .dot-menu__label span:before {
-      width: $dot-menu-size / 2;
-      left: $dot-menu-size / 2 - $dot-menu-dot-size - $dot-menu-dot-size / 2;
+      width: 27px;
+      left: 14px;
     }
   }
   .dot-menu__label {
     cursor: pointer;
-    width: $dot-menu-size;
-    height: $dot-menu-size;
+    width: 55px;
+    height: 55px;
     display: block;
-    @include text-invisible;
+    text-indent: -9999em;
     span:before {
       @include dot-menu-circle;
-      left: $dot-menu-size / 2 - $dot-menu-dot-size / 2;
-      top: $dot-menu-size / 2 - $dot-menu-dot-size / 2
+      left: 23px;
+      top: 23px;
     }
   }
   
