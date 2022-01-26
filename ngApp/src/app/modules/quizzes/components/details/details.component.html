@@ -4,8 +4,9 @@
         <div class="content-glow">{{activeIndex+1}} / {{data.length}}
             <div class="content-glow-title">
                 <h2 class="world-break">{{getData(detail.question, detail.add_default)}}</h2>
-                <mat-icon *ngIf="isAnswer()" class="icon" (click)="onNext()">
-                    <img src="assets/icons/arrow.png" />
+                <mat-icon class="icon" (click)="onNext()">
+                    <img *ngIf="isAnswer()" src="assets/icons/arrow.png" />
+                    <div *ngIf="!isAnswer()" class="padding"></div>
                 </mat-icon>
             </div>
             <div *ngFor="let answer of detail.answers; let i = index"><button
