@@ -13,6 +13,7 @@
   font-size: 3rem !important;
   text-transform: uppercase;
   letter-spacing: 8px !important;
+  font-weight: bolder !important;
 }
 
 // GLOW BOX (full page single)
@@ -27,6 +28,9 @@
   .container-glow {
     margin-top: 30px;
   }
+  .card-glow {
+    width: 100% !important;
+  }
 }
 
 .card-glow {
@@ -35,7 +39,7 @@
   position: relative;
   transition: 0.5s;
   border-radius: 3px;
-  margin: 1.4% 0 3%;
+  margin-bottom: 1%;
 }
 
 .card-glow::before {
@@ -74,17 +78,18 @@
   position: relative;
   z-index: 2;
   color: #fff;
-  padding: 40px 20px;
+  padding: 30px 20px;
   text-align: center;
 }
 
 .content-glow-title{
-  margin: 15px 10% 25px;
+  margin: 5px 10% 0;
   justify-content: center;
   display: flex;
   vertical-align:middle;
   text-align: center;
 }
+
 @media all and (max-width: 500px) {
   .content-glow-title{
     display: block;
@@ -93,10 +98,11 @@
 }
 
 .content-glow h2{
+  margin-top: 5px;
   display: inline;
   font-size: 2.1rem;
-  line-height: 40px;
-  margin: 0 3% 15px;
+  line-height: 50px;
+  font-weight: 600 !important;
 }
 
 // ANSWER BLOCK BUTTON
@@ -112,15 +118,16 @@
   width: 80%;
   display:block;
 }
-.block-btn-outlined {
+.block-outlined {
   @extend .block-btn;
-  padding: 2%; 
+  letter-spacing: 2px;
+  line-height: 45px;
+  font-size: 1.8rem;
+  font-weight: normal !important;
+  padding: 1% 5%; 
   margin-bottom: 40px;
-  border: 2px solid white; 
-  color: white; 
-  background-color: rgba(0, 0, 0, 0);
-  letter-spacing: 5px;
-  font-weight: lighter;
+  color: white;
+  background-color: var(--dark);
 }
 
 

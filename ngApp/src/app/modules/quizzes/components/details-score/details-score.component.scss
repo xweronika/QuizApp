@@ -1,8 +1,12 @@
 .content-glow-title{
     margin-top: 4%;
 }
-.block-btn-outlined{
-    padding: 3%;
+.block-outlined{
+    padding: 40px;
     font-size: 4rem;
     margin-bottom: 40px;
+    border-radius: 0;
+    border-top:  2px solid var(--pink);
+    border-bottom: 2px solid var(--pink);
+    width: 70%;   
 }
