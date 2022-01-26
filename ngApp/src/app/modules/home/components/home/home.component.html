@@ -1,24 +1,9 @@
-<div class="body">
-    <div class="container">
-
-        <div class="card" routerLink="quizzes">
+<div class="body-cards-glow">
+    <div class="container-cards-glow">
+        <div *ngFor="let link of links" class="card-cards-glow" [routerLink]="link.to">
             <span></span>
-            <div class="content">
-                <h2 class="font-1">{{'home.quizzes' | translate }}</h2>
-            </div>
-        </div>
-
-        <div class="card" routerLink="add">
-            <span></span>
-            <div class="content">
-                <h2 class="font-1">{{'home.add_new' | translate }}</h2>
-            </div>
-        </div>
-
-        <div class="card" routerLink="info">
-            <span></span>
-            <div class="content">
-                <h2 class="font-1">{{'home.info' | translate }}</h2>
+            <div class="content-cards-glow">
+                <h2 class="font-1">{{link.name | translate }}</h2>
             </div>
         </div>
     </div>

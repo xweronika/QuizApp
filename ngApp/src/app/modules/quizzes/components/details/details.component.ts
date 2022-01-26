@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription, map, switchMap } from 'rxjs';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { QuizService, Details } from '../../../../core/services/quiz.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-details',
@@ -21,7 +22,8 @@ export class DetailsComponent implements OnInit, OnDestroy {
     public quizService: QuizService,
     private router: Router,
     private route: ActivatedRoute,
-    private snackBar: MatSnackBar) { }
+    private snackBar: MatSnackBar,
+    public translate: TranslateService) { }
 
   ngOnInit(): void {
     this.subscribe = this.route.params.pipe(
@@ -65,6 +67,9 @@ export class DetailsComponent implements OnInit, OnDestroy {
   }
   isAnswer(): boolean {
     return this.selectedAnswer != null ? true : false;
+  }
+  getData(data: string, add_default: boolean) {
+    return add_default ? this.translate.instant(data) : data;
   }
 }
 

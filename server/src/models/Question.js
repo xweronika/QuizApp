@@ -26,7 +26,7 @@ class Question {
   }
 
   static findById(id) {
-    let sql = `SELECT question, answers, correct, quiz_id
+    let sql = `SELECT question, answers, correct, quiz_id, add_default
     FROM questions WHERE quiz_id = ${id};`;
     return db.execute(sql);
   }

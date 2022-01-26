@@ -5,6 +5,7 @@ module.exports = {
         question varchar(255) NOT NULL,
         answers JSON NOT NULL,
         correct TINYINT NOT NULL,
+        add_default BOOL DEFAULT 0,
         PRIMARY KEY (id),
         FOREIGN KEY (quiz_id) REFERENCES quizzes(id))`,
 

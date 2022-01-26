@@ -3,13 +3,14 @@
         <span></span>
         <div class="content-glow">{{activeIndex+1}} / {{data.length}}<br>
             <div class="content-glow-title">
-                <h2 class="world-break">{{detail.question}}</h2><br>
+                <h2 class="world-break">{{getData(detail.question, detail.add_default)}}</h2><br>
                 <mat-icon *ngIf="isAnswer()" class="icon" (click)="onNext()"><img src="assets/icons/arrow.png" />
                 </mat-icon>
             </div>
             <div *ngFor="let answer of detail.answers; let i = index"><button
                     [ngClass]="{'b-green': checkCorrect(i), 'b-red': checkWrong(i), 'btn-hover': !isAnswer()}"
-                    (click)="onClick(i, detail.correct) " class="block-btn world-break">{{answer}}</button>
+                    (click)="onClick(i, detail.correct) " class="block-btn world-break">
+                    {{getData(answer, detail.add_default)}}</button>
             </div>
         </div>
     </div>

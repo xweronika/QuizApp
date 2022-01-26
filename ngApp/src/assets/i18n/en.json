@@ -35,5 +35,12 @@
         "yes": "Yes",
         "no": "No"
     },
-    "Quiz What I like": "Quiz What I like"
+    "info": {
+        "author": "Author",
+        "technology": "Technology",
+        "appliaction": "Appliaction",
+        "author_data": "My name is Weronika Gołaszczyk. I am an engineer and frontend developerm with over a year of experience. The technologies I work with are Angular, Vue.js, and Node.js. If you have any questions, please contact me: weronika.golaszczyk@gmail.com.",
+        "tech_data": "The application was created in the MEAN stack, i.e. the MySQL database, framework Angular and Node.js. To create the application on the frontend side was used, i.a. UI Angular Material library, ngx-translate to translate and FormBuilder to build forms.",
+        "app_data": "The application is used to take quizzes in Polish or English. It is a kind of fun, intellectual entertainment, a test consisting in answering questions checking knowledge from a given category. Users can also create their own quizzes."
+    }
 }

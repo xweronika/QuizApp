@@ -4,6 +4,6 @@ module.exports = {
         category varchar(255) NOT NULL,
         description varchar(255) NOT NULL,
         created_at DATE  NOT NULL,
-        PRIMARY KEY (id) );`,
+        PRIMARY KEY (id));`,
 "down": "DROP TABLE IF EXISTS questions, quizzes"
 }

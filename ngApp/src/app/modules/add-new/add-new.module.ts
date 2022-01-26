@@ -23,8 +23,5 @@ import { AddDialogComponent } from './components/add-dialog/add-dialog.component
     TranslateModule,
     SharedModule
   ],
-  entryComponents: [
-    AddDialogComponent
-  ],
 })
 export class AddNewModule { }
