@@ -237,6 +237,17 @@ mat-dialog-container {
   position: relative;
   transition: 0.5s;
 }
+
+@media all and(max-width: 500px) {
+  .card-cards-glow {
+    margin: 40px 0;
+  }
+}
+@media all and(max-width: 280px) {
+  .card-cards-glow {
+    width: auto;
+  }
+}
   @media all and(max-width: 1000px) {
     .card {
       margin: 20px 20px;
