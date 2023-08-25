@@ -1,6 +1,6 @@
 # QuizApp
 
-Web app for solving and creating quizzes, ​​created in MEAN (MySQL, Angular, Node.js). 
+Web app for solving and creating quizzes, ​​created in MEAN (MySQL, Express, Angular, Node.js). 
 
 ![image](https://user-images.githubusercontent.com/44413511/160362806-f6b214fb-4ceb-4419-8ebb-9c7d87bb18ca.png)
 ![image](https://user-images.githubusercontent.com/44413511/160362935-0b105d89-7ea8-4313-8414-954035b0bff9.png)
